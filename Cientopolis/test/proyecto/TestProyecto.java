@@ -1,10 +1,10 @@
-package cientopolisApp;
+package proyecto;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class testCientopolisApp {
+public class TestProyecto {
 
 	@Test
 	public void test() {
