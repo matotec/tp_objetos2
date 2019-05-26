@@ -7,8 +7,22 @@ import org.junit.Test;
 public class TestCientopolisApp {
 
 	@Test
-	public void test() {
+	public void testSeCreaUnaCuentaDeInvestigador() {
 		fail("Not yet implemented");
 	}
 
+	@Test
+	public void testSeCreanVariasCuentasDeInvestigadores() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testSeEnviaMensajeDeCrearProyectoAInvestigador() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testSeEnviaMensajeDeCrearEncuestaAInvestigador() {
+		fail("Not yet implemented");
+	}
 }
