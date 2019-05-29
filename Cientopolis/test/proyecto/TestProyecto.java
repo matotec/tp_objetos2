@@ -29,7 +29,7 @@ class testProyecto {
 		assertFalse(unProyecto.getProposito().isEmpty());
 		assertTrue(unProyecto.obtenerEncuestas().isEmpty());
 		
-	}
+	} 
 	@Test
 	public void agregarEncuestaAlProyecto() {
 		unProyecto.agregarEncuesta(mockedEncuesta);

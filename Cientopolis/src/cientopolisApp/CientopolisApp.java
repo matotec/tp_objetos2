@@ -5,6 +5,7 @@ import java.util.List;
 
 import encuesta.Encuesta;
 import investigador.Investigador;
+import pregunta.Pregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
@@ -28,10 +29,14 @@ public class CientopolisApp {
 	public void crearCuentaInvestigador(Investigador _investigador) {
 		investigadores.add(_investigador);
 	}
-
+ 
+	public List<Investigador> getInvestigadores(){
+		return investigadores;
+	}
+	
 //esto seria agregar un proyecto
 	public void agregarProyecto(Investigador _investigador,Proyecto _proyecto) {
-		this.obtenerInvestigador(_investigador).agregarProyecto(_proyecto);
+		this.obtenerInvestigador(_investigador).crearProyecto(_proyecto);
 	}
 	
 //se crea un proyecto
@@ -41,14 +46,14 @@ public class CientopolisApp {
 	
 //agregar encuesta
 //preguntar a nelson si le sirve esto
-	public void agregarEncuesta(Investigador _investigador,Encuesta _encuesta) {
-		this.obtenerInvestigador(_investigador).crearEncuesta(_encuesta);		
+	public void agregarEncuesta(Investigador _investigador,Proyecto _proyecto,Encuesta _encuesta) {
+		this.obtenerInvestigador(_investigador).crearEncuesta(_encuesta,_proyecto);		
 	}
 	
 //se crea una encuesta
 //pedir a fede los param del constructor
-	public Encuesta crearEncuesta() {
-		return new Encuesta();
+	public Encuesta crearEncuesta(Pregunta _pregunta) {
+		return new Encuesta(_pregunta);
 	}
 	
 //implementar todos los mens.necesarios en las otras clases
