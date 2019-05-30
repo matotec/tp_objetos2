@@ -61,21 +61,20 @@ public class CientopolisApp {
 		List<Respuesta> respuestasDeEncuesta=new ArrayList<Respuesta>();
 		
 		for(Investigador inv:investigadores) {
-			//el if esta bien hecho?
-			if(not(inv.obtenerRespuestasDeEncuesta(_encuesta).isEmpty())) {
-				respuestasDeEncuesta=inv.obtenerRespuestasDeEncuesta;
+			if(!(inv.obtenerRespuestasDeEncuesta(_encuesta).isEmpty())) {
+				respuestasDeEncuesta=inv.obtenerRespuestasDeEncuesta(_encuesta);
 			};
-		}
+		} 
 		return respuestasDeEncuesta;
 	}
 	
-//implementar todos los mens.necesarios en las otras clases
+//implementar todos los mens.necesarios en las otras clases 
 	public List<Encuesta> obtenerEncuestasDeProyecto(Proyecto _proyecto){
 		List<Encuesta> encuestasDeProyecto=new ArrayList<Encuesta>();
 		for(Investigador inv:investigadores) {
 			//el if esta bien hecho?
-			if(not(inv.obtenerEncuestasDeProyecto(_proyecto).isEmpty())) {
-				encuestasDeProyecto=inv.obtenerEncuestasDeProyecto;
+			if(!(inv.obtenerEncuestasDeProyecto(_proyecto).isEmpty())) {
+				encuestasDeProyecto=inv.obtenerEncuestasDeProyecto(_proyecto);
 			};
 		}
 		return encuestasDeProyecto;
@@ -85,8 +84,8 @@ public class CientopolisApp {
 	public List<Proyecto> obtenerProyectosDeInvestigador(Investigador _investigador){
 		List<Proyecto> proyectosDeInvestigador=new ArrayList<Proyecto>();
 		if(investigadores.contains(_investigador)) {
-			proyectosDeInvestigador=obtenerInvestigador(_investigador).obtenerProyectos();
-		}
+			proyectosDeInvestigador=obtenerInvestigador(_investigador).getProyectos();
+		} 
 		return proyectosDeInvestigador;
 	}
 	
@@ -105,13 +104,13 @@ public class CientopolisApp {
 	
 //obtener el maximo cant de respuestas en todas las encuestas existentes
 //aca hay mensajes q tiene q implementar nelson
-	private int obtenerMaximoCantDeRespuestas() {
+	public int obtenerMaximoCantDeRespuestas() {
 		int cantDeRespuestasMaximo=0;
 		for(Investigador inv:investigadores) {
 			//esto es un int con el maximo cant de respuestas q tiene alguna encuesta
 			if( cantDeRespuestasMaximo < inv.obtenerCantDeRespuestasMaximo()) {
 				cantDeRespuestasMaximo=inv.obtenerCantDeRespuestasMaximo();
-			}
+			} 
 		}	
 		return cantDeRespuestasMaximo;		
 	}
