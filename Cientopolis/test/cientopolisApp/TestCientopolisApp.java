@@ -1,10 +1,10 @@
 package cientopolisApp;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertArrayEquals;
+//import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+//import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 //import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +29,7 @@ public class TestCientopolisApp {
 	private Investigador mockInv2;
 	private Proyecto proy1;
 	private Proyecto mockProy1;
-	private Proyecto mockProy2;
+	//private Proyecto mockProy2;
 	private List<Proyecto> listaDeProyecto;
 	private Encuesta encuesta1;
 	private Encuesta mockEncuesta1;
@@ -39,7 +39,7 @@ public class TestCientopolisApp {
 	private Pregunta mockPreg1;
 	private Respuesta mockResp1;
 	private Respuesta mockResp2;
-	private Respuesta mockResp3;
+	//private Respuesta mockResp3;
 	private List<Respuesta> listaDeRespuesta;
 	
 	@BeforeEach
@@ -48,7 +48,7 @@ public class TestCientopolisApp {
 		mockInv1= mock (Investigador.class);
 		mockInv2= mock (Investigador.class);
 		mockProy1= mock(Proyecto.class);
-		mockProy2= mock(Proyecto.class);
+		//mockProy2= mock(Proyecto.class);
 		listaDeProyecto= new ArrayList<Proyecto>();
 		mockEncuesta1= mock(Encuesta.class);
 		mockEncuesta2= mock(Encuesta.class);
@@ -57,7 +57,7 @@ public class TestCientopolisApp {
 		mockPreg1= mock (Pregunta.class);
 		mockResp1=mock (Respuesta.class);
 		mockResp2=mock (Respuesta.class);
-		mockResp3=mock (Respuesta.class);
+		//mockResp3=mock (Respuesta.class);
 		listaDeRespuesta=new ArrayList<Respuesta>();
 	}
 	

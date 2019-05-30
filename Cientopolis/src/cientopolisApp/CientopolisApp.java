@@ -119,7 +119,7 @@ public class CientopolisApp {
 	private Investigador obtenerInvestigador(Investigador _investigador) {
 		int cantDeInvestigadores=investigadores.size();
 		Investigador investigadorARetornar=null;
-
+ 
 		for(int i=0;i<cantDeInvestigadores;i++) {
 			if(_investigador.equals(investigadores.get(i))) {
 				investigadorARetornar= investigadores.get(i);

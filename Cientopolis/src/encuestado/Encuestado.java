@@ -1,5 +1,6 @@
 package encuestado;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import encuesta.Encuesta;
@@ -10,61 +11,54 @@ import respuesta.Respuesta;
 
 public class Encuestado {
 	private Encuesta encuestaAResponder;
-	private Pregunta preguntaActual;
+	String textoRespuesta="";
 	
-//setea la encuesta a responder 	
-	public void obtenerEncuestaAResponder(Encuesta _encuestaAResponder) {
-		encuestaAResponder=_encuestaAResponder;
+	public Encuestado(Encuesta _encuesta) {
+		encuestaAResponder=_encuesta;
 	}
-	
-//obtengo la pregunta a responder
-//necesito obtener la pregunta actual de una encuesta(implementar mensaje)	
-	public Pregunta leerPregunta() {
-		return  preguntaActual=encuestaAResponder.getPreguntaActual();		
-	}
-	
-	public void setPreguntaActual(Pregunta _pregunta) {
-		preguntaActual=_pregunta;
-	}
-	
-	
+		
 //obtengo las posibles respuestas
 //necesito q las preguntas me den sus posibles respuestas(implementar mensaje)	
 	public List<Respuesta> obtenerOpcionesDePregunta(){
-		return this.leerPregunta().getOpcionesDeRespuesta();
+		return encuestaAResponder.getOpcionesDePreguntaActual();
+		
+	}
+//selecciono con la lista de numeros las opciones seleccionadas en la abierta pongo uno
+	public void seleccionarOpciones(List<Integer> _opcionesSeleccionadas){
+		List<Respuesta>opcionesSeleccionadas=new ArrayList<Respuesta>();
+		for(Integer i:_opcionesSeleccionadas) {
+			opcionesSeleccionadas.add(this.obtenerOpcionesDePregunta().get(i));
+		}
+		this.responderPreguntaActual( opcionesSeleccionadas );
 		
 	}
 	
-//respondo la pregunta q necesita el string,ver q el mensaje para cargar el string sea el mismo en respuesta	
-	public void responderPreguntaAbierta(String _respuestaEscrita) {
-		this.leerPregunta().responder(_respuestaEscrita);
-	}int
-	
-//respondo la pregunta q necesita muchas selecciones	
-	public void responderPreguntaConMultiplesSelecciones(List<Integer> _opcionesSeleccionadas) {
-		this.leerPregunta().reponder(_opcionesSeleccionadas);
+	public void responderPreguntaActual(List<Respuesta> _seleccionDeRespuesta) {
+		this.encuestaAResponder.responderPreguntaActual( _seleccionDeRespuesta,this);
+		
+	}
+
+	public void escribirTextoRespuesta(String _string) {
+		 textoRespuesta=textoRespuesta+_string;
 	}
 	
-//respondo la pregunta q tiene una sola seleccion	
-	public void responderPreguntaConSeleccionUnica(int _opcionesSeleccionada) {
-		this.leerPregunta().responder(_opcionesSeleccionada);
+//hacer para mandar el texto a la respuesta	
+	public String getTextoRespuesta() {
+		return textoRespuesta;
 	}
 	
-//obtengo la pregunta anterior	
+	
+//solo para ver la pregunta anterior
 	public Pregunta anteriorPregunta() {
-		return this.leerPregunta().getPreguntaAnterior();		
+		return encuestaAResponder.getPreguntaAnterior();		
 	}
-	
+//solo para ver la pregunta siguiente	
 	public Pregunta siguientePregunta() {
-		return this.preguntaActual.siguiente();		
-	}
-	
-//la pregunta actual debe setearme la siguiente como actual 	
-	public void pasarASiguientePregunta() {
-		this.preguntaActual.pasarASiguiente(this)
+		return encuestaAResponder.getPreguntaSiguiente();		
 	}
 	
 }
 
-
+//ver q se setee la siguiente pregunta en encuesta para q cuando vaya a responder
+//la siguiente este seteada esa
 
