@@ -1,37 +1,31 @@
 package encuestado;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+//import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.Test;
+//import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import encuesta.Encuesta;
 import pregunta.Pregunta;
 import respuesta.Respuesta;
 
 import static org.mockito.Mockito.*;
+
+import java.util.ArrayList;
+import java.util.List;
 public class TestEncuestado {
 
-//	@Test
-//	public void testObtenerLaPrimerPreguntaDeLaEncuesta() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	public void testObtenerLaSegundaPreguntaDeLaEncuesta() {
-//		fail("Not yet implemented");
-//	}
-//	
-//	@Test
-//	public void testObtenerLasRespuestasPosibles() {
-//		fail("Not yet implemented");
-//	}
 	private Encuestado encuestado1;
 	private Encuestado encuestado2;
 	private Encuesta mockencuesta1;
+	private Encuesta mockencuesta2;
 	private Pregunta mockPreg1;
 	private Pregunta mockPreg2;
 	private Respuesta mockResp1;
@@ -45,16 +39,19 @@ public class TestEncuestado {
 	private List<Respuesta> opcionesPreg2;
 	private List<Respuesta> seleccion1;
 	
+	
 	@BeforeEach
 	public void setUp() {
-		encuestado1=new Encuestado(mockencuesta1);
+
 		mockPreg1=mock(Pregunta.class);
 		mockPreg2=mock(Pregunta.class);
 		mockResp1=mock(Respuesta.class);
-		mockResp2=mock(Respuesta.class);
+		mockResp2=mock(Respuesta.class); 
 		mockResp3=mock(Respuesta.class);
 		mockResp4=mock(Respuesta.class);
 		mockencuesta1= mock(Encuesta.class);
+		mockencuesta2= mock(Encuesta.class);
+		encuestado1=new Encuestado(mockencuesta1);
 		unaSeleccion=new ArrayList<Integer>();
 		variasSelecciones=new ArrayList<Integer>();
 		seleccionTexto=new ArrayList<Integer>();
@@ -63,14 +60,17 @@ public class TestEncuestado {
 		seleccion1= new ArrayList<Respuesta>();
 	}
 	
-	@Test
-	public void testOpcionesDePregunta() {
-		when(mockencuesta1.getOpcionesDePreguntaActual())thenReturn
-		
-		encuestado1.obtenerOpcionesDePregunta();
-		verify(spyEncuesta).getOpcionesDePreguntaActual();
-		
-	}
+//	@Test
+//	public void testOpcionesDePregunta() {
+//		opcionesPreg1.add(mockResp1);
+//		opcionesPreg1.add(mockResp2);
+//		opcionesPreg1.add(mockResp3);
+//		opcionesPreg1.add(mockResp4);
+//		when(mockencuesta1.getOpcionesDePreguntaActual()).thenReturn(opcionesPreg1);
+//		
+//		assertTrue(encuestado1.obtenerOpcionesDePregunta().size()==0);
+//	
+//	}
 	
 //	@Test
 //	public void testSeSeleccionanVariasOpciones() {
@@ -89,34 +89,37 @@ public class TestEncuestado {
 //		verify(mockencuesta1).responderPreguntaActual(seleccion1, encuestado1);;
 //	}
 	
-	@Test
-	public void testSeSeleccionaUnaOpcion() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testVerQueSeCargaElStringEnLaPreguntaAbierta() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testVerQueSeRespondePreguntaConMultiplesOpciones() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testVerQueSeRespondePreguntaConUnicaSeleccion() {
-		fail("Not yet implemented");
-	}
-	
+//	@Test
+//	public void testSeSeleccionaUnaOpcion() {
+//		fail("Not yet implemented");
+//	}
+//	
+//	@Test
+//	public void testVerQueSeCargaElStringEnLaPreguntaAbierta() {
+//		fail("Not yet implemented");
+//	}
+//	
+//	@Test
+//	public void testVerQueSeRespondePreguntaConMultiplesOpciones() {
+//		fail("Not yet implemented");
+//	}
+//	
+//	@Test
+//	public void testVerQueSeRespondePreguntaConUnicaSeleccion() {
+//		fail("Not yet implemented");
+//	}
+//	
 	@Test
 	public void testObtenerPreguntaAnterior() {
-		fail("Not yet implemented");
+		when(mockencuesta1.getPreguntaAnterior()).thenReturn(mockPreg2);
+		assertThat(encuestado1.anteriorPregunta(),is(mockPreg2));
 	}
+	
 	
 	@Test
 	public void testObtenerPreguntaSiguiente() {
-		fail("Not yet implemented");
+		when(mockencuesta1.getPreguntaSiguiente()).thenReturn(mockPreg1);
+		assertThat(encuestado1.siguientePregunta(),is(mockPreg1));
 	}
 	
 }

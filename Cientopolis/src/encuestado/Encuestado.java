@@ -11,7 +11,7 @@ import respuesta.Respuesta;
 
 public class Encuestado {
 	private Encuesta encuestaAResponder;
-	String textoRespuesta="";
+	private String textoRespuesta="";
 	
 	public Encuestado(Encuesta _encuesta) {
 		encuestaAResponder=_encuesta;
@@ -38,6 +38,7 @@ public class Encuestado {
 		
 	}
 
+	
 	public void escribirTextoRespuesta(String _string) {
 		 textoRespuesta=textoRespuesta+_string;
 	}
