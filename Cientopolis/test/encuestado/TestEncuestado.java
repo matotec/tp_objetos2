@@ -113,17 +113,18 @@ public class TestEncuestado {
  		assertThat (encuestado1.getTextoRespuesta(),is( "vivo en Don Bosco"));		
 	}
 	 
-	@Test 
-	public void testObtenerPreguntaAnterior() {
-		when(mockencuesta1.getPreguntaAnterior()).thenReturn(mockPreg2);
-		assertThat(encuestado1.anteriorPregunta(),is(mockPreg2));
-	}
-	 
-	
-	@Test
-	public void testObtenerPreguntaSiguiente() {
-		when(mockencuesta1.getPreguntaSiguiente()).thenReturn(mockPreg1);
-		assertThat(encuestado1.siguientePregunta(),is(mockPreg1));
-	}
-	
+//	@Test 
+//	public void testObtenerPreguntaAnterior() {
+//		when(mockencuesta1.getPreguntaAnterior()).thenReturn(mockPreg2);
+//		assertThat(encuestado1.anteriorPregunta(),is(mockPreg2));
+//	}
+//	 
+//	
+//	@Test
+//	public void testObtenerPreguntaSiguiente() {
+//		when(mockencuesta1.getPreguntaSiguiente()).thenReturn(mockPreg1);
+//		assertThat(encuestado1.siguientePregunta(),is(mockPreg1));
+//	}
+//	
 }
+ 
