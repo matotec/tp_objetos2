@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import encuesta.Encuesta;
-import pregunta.Pregunta;
+//import pregunta.Pregunta;
 import respuesta.Respuesta;
 import static org.mockito.Mockito.*;
 import java.util.ArrayList;
@@ -15,8 +15,8 @@ public class TestEncuestado {
 
 	private Encuestado encuestado1;
 	private Encuesta mockencuesta1;
-	private Pregunta mockPreg1;
-	private Pregunta mockPreg2;
+//	private Pregunta mockPreg1;
+//	private Pregunta mockPreg2;
 	private Respuesta mockResp1;
 	private Respuesta mockResp2;
 	private Respuesta mockResp3;
@@ -32,8 +32,8 @@ public class TestEncuestado {
 	@BeforeEach
 	public void setUp() {
 		opcionesPreg1= new ArrayList<Respuesta>();
-		mockPreg1=mock(Pregunta.class);
-		mockPreg2=mock(Pregunta.class);
+//		mockPreg1=mock(Pregunta.class);
+//		mockPreg2=mock(Pregunta.class);
 		mockResp1=mock(Respuesta.class);
 		mockResp2=mock(Respuesta.class); 
 		mockResp3=mock(Respuesta.class);

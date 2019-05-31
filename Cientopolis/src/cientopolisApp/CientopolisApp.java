@@ -23,7 +23,7 @@ public class CientopolisApp {
 	
 	public CientopolisApp() {
 		investigadores= new ArrayList<Investigador>();
-	}
+	} 
 	
 //esto seria crear una cuenta de investigador	
 	public void crearCuentaInvestigador(Investigador _investigador) {

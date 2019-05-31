@@ -63,7 +63,7 @@ public class TestCientopolisApp {
 		app.crearCuentaInvestigador(mockInv1);
 		assertEquals(app.getInvestigadores().size(),1);
 	}
-
+ 
 	@Test
 	public void testSeCreanVariasCuentasDeInvestigadores() {
 		app.crearCuentaInvestigador(mockInv1);

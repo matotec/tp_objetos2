@@ -17,7 +17,6 @@ public class Investigador {
 private String nombre;
 
 private List<Proyecto> listaDeProyectos;
-private Encuesta encuestaMayor;
 //private Encuesta encuestaNueva;
 //private Proyecto unProyecto;
 	public Investigador(String unNombre) {
@@ -35,29 +34,42 @@ private Encuesta encuestaMayor;
 	public List<Proyecto> getProyectos(){
 		return(this.listaDeProyectos);
 	}
-	
+	 
 //	este no sirve tienen q ser encuestas no una encuesta,recorrer todos los proyectos 
-	public Encuesta ObtenerEncuenstaFinalizadaConMayorNumerosDeRespuestas() {
-		encuestaMayor=listaDeProyectos.get(0).encuestaConMayorNumeroDeRespuesta();
-		for (int a=0; a<=(listaDeProyectos.size()-1); a++) {
-		if(	(encuestaMayor.getCantDeRespuestas())<=(listaDeProyectos.get(a).encuestaConMayorNumeroDeRespuesta().getCantDeRespuestas())) {
-			encuestaMayor=(listaDeProyectos.get(a).encuestaConMayorNumeroDeRespuesta());
-		}
-		}
-	return(encuestaMayor);
-	}
+//	public Encuesta ObtenerEncuenstaFinalizadaConMayorNumerosDeRespuestas() {
+//		encuestaMayor=listaDeProyectos.get(0).encuestaConMayorNumeroDeRespuesta();
+//		for (int a=0; a<=(listaDeProyectos.size()-1); a++) {
+//		if(	(encuestaMayor.getCantDeRespuestas())<=(listaDeProyectos.get(a).encuestaConMayorNumeroDeRespuesta().getCantDeRespuestas())) {
+//			encuestaMayor=(listaDeProyectos.get(a).encuestaConMayorNumeroDeRespuesta());
+//		}
+//		}
+//	return(encuestaMayor);
+//	}
 	
 //Nelson:de todos los proyectos obtener el maximo numero de respuestas,es un 
 //	recorrido
 	public int obtenerCantDeRespuestasMaximo() {
-		// TODO Auto-generated method stub
-		return 0;
+		int maximoCantDeRespuestas=0;
+		for(Proyecto proy:listaDeProyectos) {
+			if(maximoCantDeRespuestas < proy.obtenerMaximoCantDeRespuestas()) {
+				maximoCantDeRespuestas=proy.obtenerMaximoCantDeRespuestas();
+			}
+		}
+		return maximoCantDeRespuestas;
+		
 	}
 //Nelson:de todos los proyectos obtener un List<Encuesta> con las encuestas
 //	conn mas respuestas,es un recorrido
 	public List<Encuesta> obtenerEncuestasConMayorCantDeRespuestas() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Encuesta> encuestasConMayorCantDeRespuestas=new ArrayList<Encuesta>();
+		int maximaCantDeRespuestas=this.obtenerCantDeRespuestasMaximo();
+		
+		for(Proyecto proy:listaDeProyectos) {
+			if(maximaCantDeRespuestas == proy.obtenerMaximoCantDeRespuestas()) {
+				encuestasConMayorCantDeRespuestas.addAll(proy.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas() );
+			}
+		}
+		return encuestasConMayorCantDeRespuestas;
 	}
 		
 	
