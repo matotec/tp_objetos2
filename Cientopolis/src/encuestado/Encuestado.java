@@ -25,7 +25,7 @@ public class Encuestado {
 	}
 //selecciono con la lista de numeros las opciones seleccionadas en la abierta pongo uno
 	public void seleccionarOpciones(List<Integer> _opcionesSeleccionadas){
-		List<Respuesta>opcionesSeleccionadas=new ArrayList<Respuesta>();
+		List<Respuesta> opcionesSeleccionadas=new ArrayList<Respuesta>();
 		for(Integer i:_opcionesSeleccionadas) {
 			opcionesSeleccionadas.add(this.obtenerOpcionesDePregunta().get(i));
 		}
