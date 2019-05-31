@@ -11,7 +11,7 @@ public class Respuesta {
 	private String texto;
 	private Pregunta siguiente;
 	private IControlSiguiente controlSiguiente;
-	
+	 
 	public Respuesta(String textoRta) {
 		this.texto = textoRta;
 		this.controlSiguiente = new NoTieneSiguiente();
@@ -31,10 +31,17 @@ public class Respuesta {
 		return this.texto;
 	}
 	
-	public void setSiguientePregunta(Pregunta siguientePregunta) {
+	
+	public void setSiguientePregunta(Pregunta siguientePregunta, Pregunta preguntaActual) {
 		this.siguiente = siguientePregunta;
 		this.controlSiguiente = new TieneSiguiente();
+		this.setearComoAnteriorDeLaSiguiente(preguntaActual);
 	}
+	
+//	public void setSiguientePregunta(Pregunta siguientePregunta) {
+//		this.siguiente = siguientePregunta;
+//		this.controlSiguiente = new TieneSiguiente();
+//	}
 	
 	public Pregunta getSiguientePregunta() {
 		return this.siguiente;

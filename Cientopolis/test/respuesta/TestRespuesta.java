@@ -14,7 +14,7 @@ import pregunta.Pregunta;
 import respuesta.NoTieneSiguiente;
 import respuesta.Respuesta;
 import respuesta.TieneSiguiente;
-
+ 
 public class TestRespuesta {
 	
 	private Respuesta respuestaA;
@@ -73,7 +73,7 @@ public class TestRespuesta {
 		assertEquals(preguntaMockeadaA, respuestaB.getSiguientePregunta());
 		assertEquals(preguntaMockeadaB, respuestaC.getSiguientePregunta());
 		
-		respuestaA.setSiguientePregunta(preguntaMockeadaA);
+		respuestaA.setSiguientePregunta(preguntaMockeadaA,preguntaMockeadaB);
 		
 		assertEquals(preguntaMockeadaA, respuestaA.getSiguientePregunta());
 	}
@@ -85,7 +85,7 @@ public class TestRespuesta {
 		assertTrue(respuestaC.getControlSiguiente() instanceof TieneSiguiente);
 		
 		respuestaA.setControlSiguiente(new TieneSiguiente());
-//		respuestaA.setSiguientePregunta(preguntaMockeadaA);
+//		respuestaA.setSiguientePregunta(preguntaMockeadaA,preguntaMockeadaB);
 		
 		assertTrue(respuestaA.getControlSiguiente() instanceof TieneSiguiente);
 		
