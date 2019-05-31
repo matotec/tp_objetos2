@@ -1,71 +1,93 @@
 package investigador;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import cientopolisApp.CientopolisApp;
 import encuesta.Encuesta;
-import pregunta.Pregunta;
+//import pregunta.Pregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
+
+
+
+
+
 public class Investigador {
-private List<Proyecto> proyectos;
+ 
 private String nombre;
-private CientopolisApp unaAplicacion;
+
+private List<Proyecto> listaDeProyectos;
+private Encuesta encuestaMayor;
+//private Encuesta encuestaNueva;
+//private Proyecto unProyecto;
 	public Investigador(String unNombre) {
 		this.nombre=unNombre;
+		this.listaDeProyectos= new ArrayList<Proyecto>();
 	}
 	public String getNombre() {
 		return nombre;
-	}
-	public void crearEncuesta(Encuesta _encuesta,Proyecto _proyecto) {
-	  //aca hay q hacer la busqueda del proyecto para agregar encuesta
-	  //proyectos=new ArrayList<Proyecto>();
+	} 
+	
+	public void agregarEncuestaAProyecto( Proyecto proyecto,Encuesta encuesta) {
+		proyecto.agregarEncuesta(encuesta);
 	}
 	
-	
-	public void crearProyecto(Proyecto _proyecto) {
-		proyectos.add(_proyecto);
-		
-	}
-//	public void CrearProyecto(CientopolisApp mockedAplicacion, String descripcion, String proposito) {
-//		mockedAplicacion.CrearProyecto(descripcion,proposito);
-//		
-//	}
-	public void agregarEncuestaAProyecto(CientopolisApp aplicacion, Proyecto proyecto,
-			Encuesta encuesta) {
-		aplicacion.agregarEncuestaAProyecto(proyecto,encuesta);
-		
+	public List<Proyecto> getProyectos(){
+		return(this.listaDeProyectos);
 	}
 	
-//Nelson:ver si esta implementado	
-	public List<Respuesta> obtenerRespuestasDeEncuesta(Encuesta _encuesta) {
-		// TODO Auto-generated method stub
-		return null;
+//	este no sirve tienen q ser encuestas no una encuesta,recorrer todos los proyectos 
+	public Encuesta ObtenerEncuenstaFinalizadaConMayorNumerosDeRespuestas() {
+		encuestaMayor=listaDeProyectos.get(0).encuestaConMayorNumeroDeRespuesta();
+		for (int a=0; a<=(listaDeProyectos.size()-1); a++) {
+		if(	(encuestaMayor.getCantDeRespuestas())<=(listaDeProyectos.get(a).encuestaConMayorNumeroDeRespuesta().getCantDeRespuestas())) {
+			encuestaMayor=(listaDeProyectos.get(a).encuestaConMayorNumeroDeRespuesta());
+		}
+		}
+	return(encuestaMayor);
 	}
-//Nelson:ver si esta implementado	
-	public List<Encuesta> obtenerEncuestasDeProyecto(Proyecto _proyecto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-//Nelson:ver si esta implementado	
-	public List<Proyecto> getProyectos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-//Nelson:ver si esta implementado
+	
+//Nelson:de todos los proyectos obtener el maximo numero de respuestas,es un 
+//	recorrido
 	public int obtenerCantDeRespuestasMaximo() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-//Nelson:ver si esta implementado	
+//Nelson:de todos los proyectos obtener un List<Encuesta> con las encuestas
+//	conn mas respuestas,es un recorrido
 	public List<Encuesta> obtenerEncuestasConMayorCantDeRespuestas() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+		
 	
-
+	
+	
+	
+	
+//	los parametros no hacen falta,ver en test si cambia algo
+	public void crearProyecto(Proyecto unProyecto) {
+		this.agregarProyecto(unProyecto);
+		//this.listaDeProyectos.add(new Proyecto(string,string2));
+	}
+	public void agregarProyecto(Proyecto proyecto) {
+		this.listaDeProyectos.add(proyecto);		
+	}
+//	reimplementar,es un recorrido buscando el proyecto y agregando la encuesta
+	public void crearEncuesta(Encuesta encuestaNueva,Proyecto proyecto) {
+		proyecto.agregarEncuesta(encuestaNueva);
+		
+	}
+	
+//	reimplementar
+	public List<Encuesta> obtenerEncuestasDeProyecto(Proyecto proyecto) {
+		return (proyecto.obtenerEncuestas());
+	}
+//	reimplementar
+	public List<Respuesta> obtenerRespuestasDeEncuesta(Encuesta encuesta) {
+		// TODO Auto-generated method stub
+		return (encuesta.getRespuestas());
+	}
+	
 }
 

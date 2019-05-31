@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
 
 import encuesta.Encuesta;
 import investigador.Investigador;
-import pregunta.Pregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
@@ -31,12 +30,10 @@ public class TestCientopolisApp {
 	private Proyecto mockProy1;
 	//private Proyecto mockProy2;
 	private List<Proyecto> listaDeProyecto;
-	private Encuesta encuesta1;
 	private Encuesta mockEncuesta1;
 	private Encuesta mockEncuesta2;
 	private List<Encuesta> listaDeEncuesta;
 	private List<Encuesta> listaDeEncuesta1;
-	private Pregunta mockPreg1;
 	private Respuesta mockResp1;
 	private Respuesta mockResp2;
 	//private Respuesta mockResp3;
@@ -54,7 +51,6 @@ public class TestCientopolisApp {
 		mockEncuesta2= mock(Encuesta.class);
 		listaDeEncuesta=new ArrayList<Encuesta>();
 		listaDeEncuesta1=new ArrayList<Encuesta>();
-		mockPreg1= mock (Pregunta.class);
 		mockResp1=mock (Respuesta.class);
 		mockResp2=mock (Respuesta.class);
 		//mockResp3=mock (Respuesta.class);
@@ -74,7 +70,7 @@ public class TestCientopolisApp {
 		app.crearCuentaInvestigador(mockInv2);
 		assertEquals(app.getInvestigadores().size(),2);
 	}
-	
+	 
 	@Test
 	public void testAgregarProyectoAInvestigador() {
 		app.crearCuentaInvestigador(mockInv1);
@@ -92,11 +88,11 @@ public class TestCientopolisApp {
 	
 	@Test
 	public void testAgregarEncuestaAInvestigador() {
-		encuesta1=app.crearEncuesta(mockPreg1);
-		app.crearCuentaInvestigador(mockInv1);
-		app.agregarEncuesta(mockInv1, mockProy1, encuesta1);
+//		encuesta1=app.crearEncuesta(mockPreg1);
+		app.crearCuentaInvestigador(mockInv1); 
+		app.agregarEncuesta(mockInv1, mockProy1, mockEncuesta1);
 		
-		verify(mockInv1).crearEncuesta(encuesta1, mockProy1);
+		verify(mockInv1).agregarEncuestaAProyecto(mockProy1, mockEncuesta1);
 	}
 	
 //	@Test

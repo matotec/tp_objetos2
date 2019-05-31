@@ -1,7 +1,8 @@
 package proyecto;
 
 import java.util.ArrayList;
-import java.util.function.BooleanSupplier;
+import java.util.List;
+
 
 import encuesta.Encuesta;
 
@@ -11,7 +12,8 @@ public class Proyecto {
 
 	private String proposito;
 	private String descripcion;
-	private ArrayList<Encuesta> listadoDeEncuestas;
+	private List<Encuesta> listadoDeEncuestas;
+	private Encuesta encuestaMayor;
 
 	public Proyecto(String descripcion, String proposito) {
 		this.descripcion=descripcion;
@@ -31,15 +33,25 @@ public class Proyecto {
 	}
 
 
-	public void agregarEncuesta( Encuesta mockedEncuesta) {
-		listadoDeEncuestas.add(mockedEncuesta);
+	public void agregarEncuesta( Encuesta encuestaNueva) {
+		listadoDeEncuestas.add(encuestaNueva);
 		
 		
 	}
 
 
-	public ArrayList<Encuesta> obtenerEncuestas() {
+	public List<Encuesta> obtenerEncuestas() {
 		return(this.listadoDeEncuestas);
+	}
+
+	public Encuesta encuestaConMayorNumeroDeRespuesta() {
+		encuestaMayor=this.obtenerEncuestas().get(0);
+		for(int i=0; i <=this.obtenerEncuestas().size()-1;i++) {
+			if(encuestaMayor.getCantDeRespuestas()<this.obtenerEncuestas().get(i).getCantDeRespuestas()) {
+				encuestaMayor=this.obtenerEncuestas().get(i);
+			}
+		}
+		return (encuestaMayor);
 	}
 
 
@@ -48,25 +60,3 @@ public class Proyecto {
 	
 
 }
-
-
-//package proyecto;
-///*clase q implementa nelson*/
-//
-//import java.util.ArrayList;
-//
-//public class Proyecto {
-//	String descripcion;
-//	String proposito;
-//	private ArrayList<Encuestado> encuestas=new ArrayList<Encuestado>();
-//	public Proyecto(String _descripcion, String _proposito) {
-//		descripcion=_descripcion;
-//		proposito=_proposito;
-//	}
-//	
-//	//mensajes a implementar,seguro algunos faltan
-//	
-//	public List<Encuestado> obtenerEncuestasFinalizadas();//solo las finalizadas
-//	public List<Encuestado> obtenerEncuestas();//las encuestas del proyecto
-//	public void agregarEncuesta(Encuestado _encuesta);//agrega una encuesta al proyecto
-//}

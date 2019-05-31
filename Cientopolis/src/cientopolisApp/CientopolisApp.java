@@ -47,14 +47,14 @@ public class CientopolisApp {
 //agregar encuesta
 //preguntar a nelson si le sirve esto
 	public void agregarEncuesta(Investigador _investigador,Proyecto _proyecto,Encuesta _encuesta) {
-		this.obtenerInvestigador(_investigador).crearEncuesta(_encuesta,_proyecto);		
+		this.obtenerInvestigador(_investigador).agregarEncuestaAProyecto(_proyecto,_encuesta);		
 	}
-	
+	 
 //se crea una encuesta
 //pedir a fede los param del constructor
 	public Encuesta crearEncuesta(Pregunta _pregunta) {
 		return new Encuesta(_pregunta);
-	}
+	} 
 	
 //implementar todos los mens.necesarios en las otras clases
 	public List<Respuesta> obtenerRespuestasDeEncuesta(Encuesta _encuesta) {
