@@ -36,7 +36,7 @@ public class Respuesta {
 		this.siguiente = siguientePregunta;
 		this.controlSiguiente = new TieneSiguiente();
 		this.setearComoAnteriorDeLaSiguiente(preguntaActual);
-	}
+	} 
 	
 //	public void setSiguientePregunta(Pregunta siguientePregunta) {
 //		this.siguiente = siguientePregunta;

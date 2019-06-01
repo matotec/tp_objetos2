@@ -98,7 +98,7 @@ public class Encuesta {
 	public Integer cantidadDeRespuestas() {
 		return this.getEstadoActual().cantidadDeRespuestas(this);
 	}
-	
+	 
 	public Integer cantidadDeRespuestasPrivado() {
 		return this.cantidadDeRespuestas;
 	}

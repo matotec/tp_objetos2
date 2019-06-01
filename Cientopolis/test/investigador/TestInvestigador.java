@@ -1,39 +1,35 @@
 package investigador;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 //import interfaces.Proyecto;
 import proyecto.Proyecto;
-import respuesta.Respuesta;
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import encuesta.Encuesta;
-import pregunta.Pregunta;
+
 
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TestInvestigador {
 	private Encuesta mockedEncuesta;
-	private Encuesta mockedEncuesta2;
 	private Investigador unInvestigador;
-
-//	private Pregunta mockedPregunta;
+	private List<Encuesta> listaDeEncuestas;
 	private Proyecto proyecto;
-//	private Proyecto proyecto2;
 	private Proyecto mockedProyecto;
 	private Proyecto mockedProyecto2;
 	@BeforeEach 
 	public void setUp() {
 		unInvestigador= new Investigador("Luis");
 		mockedEncuesta= mock (Encuesta.class);
-		mockedEncuesta2= mock (Encuesta.class);
-//		mockedPregunta= mock (Pregunta.class);
-//		proyecto2=new Proyecto("unaDescripcion","unProposito");
 		proyecto=new Proyecto("unaDescripcion","unProposito");
-
 		mockedProyecto= mock (Proyecto.class);
 		mockedProyecto2= mock (Proyecto.class);
 	}
@@ -43,23 +39,7 @@ public class TestInvestigador {
 		assertTrue(unInvestigador.getNombre()=="Luis");
 	
 	}
-/*@Test 
-	public void creacionDeEncuesta() {
-		
-		mockedEncuesta=unInvestigador.crearEncuesta(mockedPregunta);
-		
 
-		
-}
-*/
-//este no va 	
-//@Test
-//public void crearUnProyectoVacio() {
-//
-//	unInvestigador.crearProyecto("Soy una descripcion","Soy un proposito");
-//	
-//	assertTrue(unInvestigador.getProyectos().size()==1);
-//}
 @Test 
 public void agregarEncuestaAUnProyecto() {
 	unInvestigador.agregarEncuestaAProyecto(proyecto, mockedEncuesta);;
@@ -67,18 +47,7 @@ public void agregarEncuestaAUnProyecto() {
 	}
 
 
-@Test
-public void encuestaConMayorNumeroDePreguntas() {
-	unInvestigador.agregarProyecto(mockedProyecto);
-	unInvestigador.agregarProyecto(mockedProyecto2);
-	when(mockedProyecto.encuestaConMayorNumeroDeRespuesta()).thenReturn(mockedEncuesta);
-	when(mockedProyecto2.encuestaConMayorNumeroDeRespuesta()).thenReturn(mockedEncuesta2);
-	when(mockedEncuesta.getCantDeRespuestas()).thenReturn(3);
-	when(mockedEncuesta2.getCantDeRespuestas()).thenReturn(8);
-	assertTrue(unInvestigador.ObtenerEncuenstaFinalizadaConMayorNumerosDeRespuestas().getCantDeRespuestas()==8);
-	
 
-}
 @Test
 public void obtenerEncuestasDeProyecto() {
 	proyecto.agregarEncuesta(mockedEncuesta);
@@ -89,7 +58,28 @@ public void obtenerEncuestasDeProyecto() {
 	assertTrue(unInvestigador.obtenerEncuestasDeProyecto(proyecto).getClass()==ArrayList.class);
 	assertTrue(unInvestigador.obtenerEncuestasDeProyecto(proyecto).contains(mockedEncuesta));
 }
-
+ 
+@Test
+public void testObtenerMaximoCantidadDeRespuestas() {
+	unInvestigador.agregarProyecto(mockedProyecto);
+	unInvestigador.agregarProyecto(mockedProyecto2);
+	when(mockedProyecto.obtenerMaximoCantDeRespuestas()).thenReturn(2);
+	when(mockedProyecto2.obtenerMaximoCantDeRespuestas()).thenReturn(1);
+	assertTrue(unInvestigador.obtenerCantDeRespuestasMaximo()==2);
+}
 	
+@Test
+public void testobtenerEncuestasFinalizadasConMayorCantidadDeRespuestas() {
+	unInvestigador.agregarProyecto(mockedProyecto);
+	unInvestigador.agregarProyecto(mockedProyecto2);
+	unInvestigador.agregarEncuestaAProyecto(mockedProyecto, mockedEncuesta);
+	listaDeEncuestas.add(mockedEncuesta);
+	when(mockedProyecto.obtenerMaximoCantDeRespuestas()).thenReturn(2);
+	when(mockedProyecto2.obtenerMaximoCantDeRespuestas()).thenReturn(1);
+	when(mockedProyecto.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas() ).thenReturn(listaDeEncuestas);
+	assertTrue(unInvestigador.obtenerCantDeRespuestasMaximo()==2); 
+	assertThat(unInvestigador.obtenerEncuestasConMayorCantDeRespuestas(),is(listaDeEncuestas));
+}
+ 
 }
 	

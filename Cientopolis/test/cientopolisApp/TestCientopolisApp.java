@@ -1,14 +1,14 @@
 package cientopolisApp;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
-//import static org.junit.Assert.assertArrayEquals;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-//import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-//import org.junit.Test;
+
+
 import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import encuesta.Encuesta;
@@ -88,17 +88,13 @@ public class TestCientopolisApp {
 	
 	@Test
 	public void testAgregarEncuestaAInvestigador() {
-//		encuesta1=app.crearEncuesta(mockPreg1);
+
 		app.crearCuentaInvestigador(mockInv1); 
 		app.agregarEncuesta(mockInv1, mockProy1, mockEncuesta1);
 		
 		verify(mockInv1).agregarEncuestaAProyecto(mockProy1, mockEncuesta1);
 	}
 	
-//	@Test
-//	public void testSeCreaEncuesta() {
-//		fail("Not yet implemented");
-//	}
 	
 	@Test
 	public void testObtenerRespuestasDeEncuesta() {
@@ -110,7 +106,7 @@ public class TestCientopolisApp {
 		assertTrue(mockResp1 ==(app.obtenerRespuestasDeEncuesta(mockEncuesta1).get(0))); 
 		assertTrue(app.obtenerRespuestasDeEncuesta(mockEncuesta1).size()== 2);
 	}
-	
+ 	
 	@Test
 	public void testObtenerEncuestasDeProyecto() {
 		app.crearCuentaInvestigador(mockInv1);
@@ -135,7 +131,7 @@ public class TestCientopolisApp {
 		app.crearCuentaInvestigador(mockInv1);
 		app.crearCuentaInvestigador(mockInv2);
 		listaDeEncuesta.add(mockEncuesta1);
-		listaDeEncuesta1.add(mockEncuesta2);
+		listaDeEncuesta1.add(mockEncuesta2); 
 		when(app.obtenerMaximoCantDeRespuestas()).thenReturn(3);
 		when(mockInv1.obtenerEncuestasConMayorCantDeRespuestas()).thenReturn(listaDeEncuesta);
 		when(mockInv2.obtenerEncuestasConMayorCantDeRespuestas()).thenReturn(listaDeEncuesta1);

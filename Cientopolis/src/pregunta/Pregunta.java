@@ -19,7 +19,7 @@ public abstract class Pregunta {
 	public void interaccionSiguientePregunta(Encuesta encuesta) {
 		this.getEstadoActual().proximaPregunta(this, encuesta);
 	};
-	
+	 
 	public void interaccionAnteriorPregunta(Encuesta encuesta) {
 		this.getControlAnterior().anteriorPregunta(this, encuesta);
 	};

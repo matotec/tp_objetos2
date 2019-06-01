@@ -103,7 +103,7 @@ public class CientopolisApp {
 	}
 	
 //obtener el maximo cant de respuestas en todas las encuestas existentes
-//aca hay mensajes q tiene q implementar nelson
+
 	public int obtenerMaximoCantDeRespuestas() {
 		int cantDeRespuestasMaximo=0;
 		for(Investigador inv:investigadores) {
@@ -133,5 +133,3 @@ public class CientopolisApp {
 
 
 
-//preguntas:
-//se tiene q modelar lo de los lugares en las encuestas

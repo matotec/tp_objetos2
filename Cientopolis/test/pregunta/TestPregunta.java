@@ -24,7 +24,7 @@ import respuesta.IControlSiguiente;
 import respuesta.NoTieneSiguiente;
 import respuesta.Respuesta;
 import respuesta.TieneSiguiente;
-
+ 
 public class TestPregunta {
 	
 	private Pregunta preguntaA;
@@ -51,7 +51,7 @@ public class TestPregunta {
 	
 	@BeforeEach
 	public void setUp() {
-		
+		 
 		respuestaMockeadaA = mock(Respuesta.class);
 		respuestaMockeadaB = mock(Respuesta.class);
 		respuestaMockeadaC = mock(Respuesta.class);

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import encuesta.Encuesta;
-//import pregunta.Pregunta;
+
 import respuesta.Respuesta;
 
-//ver q los tipos coincidan con lo de fede en pregunta y respuesta
+
 
 public class Encuestado {
 	private Encuesta encuestaAResponder;
@@ -18,7 +18,6 @@ public class Encuestado {
 	}
 		
 //obtengo las posibles respuestas
-//necesito q las preguntas me den sus posibles respuestas(implementar mensaje)	
 	public List<Respuesta> obtenerOpcionesDePregunta(){
 		return encuestaAResponder.getOpcionesDePreguntaActual();
 		
@@ -48,20 +47,4 @@ public class Encuestado {
 		return textoRespuesta;
 	}
 	
-	//PREGUNTA: se justifica hacer los metodos de "anteriorPregunta" y "siguientePregunta" aca?
-
-	//ya se pasa a la siguiente al responder (en caso de q haya siguiente).	
-////solo para ver la pregunta anterior
-//	public Pregunta anteriorPregunta() {
-//		return encuestaAResponder.getPreguntaAnterior();		
-//	}
-////solo para ver la pregunta siguiente	
-//	public Pregunta siguientePregunta() {
-//		return encuestaAResponder.getPreguntaSiguiente();		
-//	}
-	
 }
-
-//ver q se setee la siguiente pregunta en encuesta para q cuando vaya a responder
-//la siguiente este seteada esa
-

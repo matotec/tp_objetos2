@@ -10,7 +10,7 @@ public class NoTieneSiguiente implements IControlSiguiente {
 	public void proximaPregunta(Respuesta respuestaActual, Encuesta encuestaActual) {
 		// No hago nada porque no tengo "siguiente" pregunta.
 	}
-
+ 
 	@Override
 	public void responder(Encuesta encuestaActual) {
 		encuestaActual.setEstado(new Finalizada());

@@ -1,7 +1,9 @@
 package proyecto;
 
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +31,7 @@ public class TestProyecto {
 		mockedEncuesta3=mock(Encuesta.class);
 		listaDeEncuestas=new ArrayList<>();
 	
-	}
+	} 
 	@Test
 	void alCrearSeElProyectoPoseeUnaDescripcionYUnProposito() {
 		assertFalse(unProyecto.getDescripcion().isEmpty());
@@ -45,25 +47,7 @@ public class TestProyecto {
 		
 		
 	}
-	@Test
-	public void encuestaConMayorNumeroDeRespuestas() {
-		unProyecto.agregarEncuesta(mockedEncuesta);
-		unProyecto.agregarEncuesta(mockedEncuesta2);
-		when(mockedEncuesta.getCantDeRespuestas()).thenReturn(3);
-		when(mockedEncuesta2.getCantDeRespuestas()).thenReturn(6);
 	
-		assertTrue(unProyecto.encuestaConMayorNumeroDeRespuesta().getCantDeRespuestas()==6);
-	}
-	@Test
-	public void encuestaConMayorNumeroDeRespuestasPrueba2() {
-		unProyecto.agregarEncuesta(mockedEncuesta);
-		
-		when(mockedEncuesta.getCantDeRespuestas()).thenReturn(3);
-		
-	
-		assertTrue(unProyecto.encuestaConMayorNumeroDeRespuesta().getCantDeRespuestas()==3);
-	}
-
 	@Test
 	void testObtenerMaximoCantidadDeRespuestas() {
 		unProyecto.agregarEncuesta(mockedEncuesta);
@@ -73,7 +57,7 @@ public class TestProyecto {
 		assertTrue(unProyecto.obtenerMaximoCantDeRespuestas()==2);
 	}
 	
-	@Test
+	@Test 
 	void testObtenerEncuestasConMaximoCantidadDeRespuestas() {
 		unProyecto.agregarEncuesta(mockedEncuesta);
 		unProyecto.agregarEncuesta(mockedEncuesta2);
@@ -84,9 +68,9 @@ public class TestProyecto {
 		when(mockedEncuesta3.cantidadDeRespuestas()).thenReturn(1);
 		assertTrue(unProyecto.obtenerMaximoCantDeRespuestas()==2);
 		assertThat(unProyecto.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(),is(listaDeEncuestas));
-	}
+	} 
 	
-}
+} 
 	
 
 
