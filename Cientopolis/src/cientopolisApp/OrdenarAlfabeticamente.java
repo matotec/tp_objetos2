@@ -8,14 +8,13 @@ import encuesta.Encuesta;
 import proyecto.Proyecto;
 
 public class OrdenarAlfabeticamente extends Ordenamiento{
-	
+	List <Encuesta> EncuestasOrdenadas= new ArrayList<Encuesta>();
 	
 	@Override
 	public List<Encuesta> ordenar(CientopolisApp _cientopolisApp) {
 		List<String> nombresProy= this.nombresDeProyectos(_cientopolisApp);
 		Collections.sort(nombresProy);
-		List<Proyecto> allProyectos= this.proyectosDeApp(_cientopolisApp);
-		List<Proyecto> proyectosOrdenados=this.proyectosOrdenadosAlfabeticamente(nombresProy,allProyectos);
+		List<Proyecto> proyectosOrdenados=this.proyectosOrdenadosAlfabeticamente(nombresProy,this.proyectosDeApp(_cientopolisApp));
 		for(Proyecto proy:proyectosOrdenados) {
 			EncuestasOrdenadas.addAll(proy.obtenerEncuestas());
 		}

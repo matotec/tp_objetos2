@@ -1,6 +1,7 @@
 package proyecto;
 
 import java.util.ArrayList;
+//import java.util.Collection;
 import java.util.List;
 
 
@@ -75,6 +76,12 @@ public class Proyecto {
 
 //mensaje agregado ver implementacion de nelson
 	public String getNombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//mensaje agregado ver implementacion de nelson
+	public List<Integer> usosDeEncuestas() {
 		// TODO Auto-generated method stub
 		return null;
 	}

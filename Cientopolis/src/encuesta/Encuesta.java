@@ -126,6 +126,12 @@ public class Encuesta {
 	public List<Respuesta> getOpcionesDePreguntaActual() {
 		return this.getPreguntaActual().getOpciones();
 	}
+
+//mensaje agregado ver implementacion de fede
+	public Integer cantidadDeUsos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
 
