@@ -39,9 +39,9 @@ public class CientopolisApp {
 		this.obtenerInvestigador(_investigador).crearProyecto(_proyecto);
 	}
 	
-//se crea un proyecto
-	public Proyecto crearProyecto(String _descripcion,String _proposito) {
-		return new Proyecto(_descripcion,_proposito);	
+//se crea un proyecto,ahora tienen nombre los proy
+	public Proyecto crearProyecto(String _descripcion,String _proposito,String _nombre) {
+		return new Proyecto(_descripcion,_proposito,_nombre);	
 	}
 	
 //agregar encuesta
@@ -127,6 +127,13 @@ public class CientopolisApp {
 		}
 		return investigadorARetornar;
 	}
+
+	public List<Encuesta> obtenerEncuestasOrdenadasPor(Ordenamiento _ordenamiento){
+		return _ordenamiento.ordenar(this);
+		
+	}
+	
+	
 	
 }
 	

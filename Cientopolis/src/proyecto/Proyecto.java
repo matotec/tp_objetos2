@@ -13,12 +13,14 @@ public class Proyecto {
 
 	private String proposito;
 	private String descripcion;
+	private String nombre;
 	private List<Encuesta> listadoDeEncuestas;
 
 
-	public Proyecto(String descripcion, String proposito) {
-		this.descripcion=descripcion;
-		this.proposito=proposito;
+	public Proyecto(String _descripcion, String _proposito, String _nombre) {
+		this.descripcion=_descripcion;
+		this.proposito=_proposito;
+		this.nombre=_nombre;
 		this.listadoDeEncuestas = new ArrayList<Encuesta>();
 		
 	}
@@ -42,7 +44,7 @@ public class Proyecto {
 
 
 	public List<Encuesta> obtenerEncuestas() {
-		return(this.listadoDeEncuestas);
+		return this.listadoDeEncuestas;
 	}
 
 	
@@ -69,6 +71,12 @@ public class Proyecto {
 			}
 		}
 		return encuestasConMayorCantDeRespuestas;
+	}
+
+//mensaje agregado ver implementacion de nelson
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
