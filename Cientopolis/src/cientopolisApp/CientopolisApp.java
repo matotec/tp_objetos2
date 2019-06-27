@@ -1,5 +1,6 @@
 package cientopolisApp;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import respuesta.Respuesta;
 
 public class CientopolisApp {
 	private List<Investigador> investigadores;
-	
+	private Date fechaActual;
 	public CientopolisApp() {
 		investigadores= new ArrayList<Investigador>();
 	} 
@@ -133,7 +134,13 @@ public class CientopolisApp {
 		
 	}
 	
+	public Date getFechaActual() {
+		return fechaActual;
+	}
 	
+	public void setFechaActual(Date _date) {
+		fechaActual=_date;
+	}
 	
 }
 	

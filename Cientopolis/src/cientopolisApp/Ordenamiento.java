@@ -9,7 +9,7 @@ import investigador.Investigador;
 import proyecto.Proyecto;
 
 public abstract class Ordenamiento {
-	
+	List <Encuesta> encuestasOrdenadas= new ArrayList<Encuesta>();
 	
 	public List<Proyecto> proyectosDeApp(CientopolisApp _cientopolisApp){
 		List <Proyecto> proyectosRet= new ArrayList<Proyecto>();

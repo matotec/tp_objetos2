@@ -6,17 +6,18 @@ import encuesta.Encuesta;
 import proyecto.Proyecto;
 
 public class OrdenamientoPorUso extends Ordenamiento {
-	List<Encuesta> encuestasMasUsadas= new ArrayList<>();
+	
 	
 	@Override
 	public List<Encuesta> ordenar(CientopolisApp _cientopolisApp) {
 		List<Integer> usosDeMayorAMenor= this.usosDeEncuestasOrdenados(_cientopolisApp);
 		for(Integer uso:usosDeMayorAMenor) {
-			if(encuestasMasUsadas.size()<26) {
-				encuestasMasUsadas.addAll(this.encuestasConMismoUso(uso,this.proyectosDeApp(_cientopolisApp)));
+			if(encuestasOrdenadas.size()<=26) {
+				encuestasOrdenadas.addAll(this.encuestasConMismoUso(uso,this.proyectosDeApp(_cientopolisApp)));
 			}
 		}
-		return encuestasMasUsadas;
+		encuestasOrdenadas=encuestasOrdenadas.subList(0,25);
+		return encuestasOrdenadas;
 	}
 
 	private List<Encuesta> encuestasConMismoUso(Integer _uso, List<Proyecto> _proyectosDeApp) {

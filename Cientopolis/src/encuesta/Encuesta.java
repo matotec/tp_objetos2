@@ -53,6 +53,7 @@
 
 package encuesta;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -129,6 +130,12 @@ public class Encuesta {
 
 //mensaje agregado ver implementacion de fede
 	public Integer cantidadDeUsos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//mensaje agregado ver implementacion de fede	
+	public Date getDateCreacion() {
 		// TODO Auto-generated method stub
 		return null;
 	}
