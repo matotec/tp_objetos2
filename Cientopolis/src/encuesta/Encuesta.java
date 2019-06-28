@@ -1,56 +1,3 @@
-//package encuesta;
-//
-//import java.util.List;
-//
-//import encuestado.Encuestado;
-//import pregunta.Pregunta;
-//import respuesta.Respuesta;
-//
-//public class Encuesta {
-//
-//	public Encuesta(Pregunta _pregunta) {
-//		// TODO Auto-generated constructor stub
-//	}
-//
-//	public List<Respuesta> getRespuestas() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-////fede:ver si ya existe	
-//	public int getCantDeRespuestas() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-////fede:ver si ya existe
-//	public Pregunta preguntaActual() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-////fede:ver si ya existe,lo uso para obtener las opciones pero lo q respondo lo simulo en los tests
-//	public List<Respuesta> getOpcionesDePreguntaActual() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-////fede:este ya lo tenias
-//	public void responderPreguntaActual(List<Respuesta> _seleccionDeRespuesta, Encuestado encuestado) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-////fede:ver si ya existe
-//	public Pregunta getPreguntaAnterior() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-////fede:ver si ya existe
-//	public Pregunta getPreguntaSiguiente() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//}
-
-
 package encuesta;
 
 
@@ -59,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import encuestado.Encuestado;
+import pregunta.DireccionDePregunta;
 import pregunta.Pregunta;
 import respuesta.Respuesta;
 
@@ -68,6 +16,7 @@ public class Encuesta {
 	private Pregunta preguntaActual;
 	private List<Respuesta> respuestas;
 	private Integer cantidadDeRespuestas;
+	private List<DireccionDePregunta> listaDeSubscriptores;
 	
 	public Encuesta(Pregunta preguntaInicial) {
 		this.preguntaActual = preguntaInicial;
@@ -140,7 +89,19 @@ public class Encuesta {
 		// TODO Auto-generated method stub
 		return null;
 	}
+//	para abajo creo q agrego nelson
+	public boolean estaFinalizada() {
+		// TODO Auto-generated method stub
+		return (true);
+	}
+
 	
+
+	public void recibirSubscripcion(DireccionDePregunta direccionDePregunta) {
+		this.listaDeSubscriptores.add(direccionDePregunta);
+		
+	}
+
 }
 
 

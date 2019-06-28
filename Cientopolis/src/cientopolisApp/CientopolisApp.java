@@ -1,12 +1,12 @@
 package cientopolisApp;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import encuesta.Encuesta;
 import investigador.Investigador;
-import pregunta.Pregunta;
+//import pregunta.Pregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
@@ -21,7 +21,7 @@ import respuesta.Respuesta;
 
 public class CientopolisApp {
 	private List<Investigador> investigadores;
-	private Date fechaActual;
+	
 	public CientopolisApp() {
 		investigadores= new ArrayList<Investigador>();
 	} 
@@ -40,10 +40,7 @@ public class CientopolisApp {
 		this.obtenerInvestigador(_investigador).crearProyecto(_proyecto);
 	}
 	
-//se crea un proyecto,ahora tienen nombre los proy
-	public Proyecto crearProyecto(String _descripcion,String _proposito,String _nombre) {
-		return new Proyecto(_descripcion,_proposito,_nombre);	
-	}
+
 	
 //agregar encuesta
 //preguntar a nelson si le sirve esto
@@ -51,11 +48,6 @@ public class CientopolisApp {
 		this.obtenerInvestigador(_investigador).agregarEncuestaAProyecto(_proyecto,_encuesta);		
 	}
 	 
-//se crea una encuesta
-//pedir a fede los param del constructor
-	public Encuesta crearEncuesta(Pregunta _pregunta) {
-		return new Encuesta(_pregunta);
-	} 
 	
 //implementar todos los mens.necesarios en las otras clases
 	public List<Respuesta> obtenerRespuestasDeEncuesta(Encuesta _encuesta) {
@@ -132,15 +124,9 @@ public class CientopolisApp {
 	public List<Encuesta> obtenerEncuestasOrdenadasPor(Ordenamiento _ordenamiento){
 		return _ordenamiento.ordenar(this);
 		
-	}
+	} 
 	
-	public Date getFechaActual() {
-		return fechaActual;
-	}
 	
-	public void setFechaActual(Date _date) {
-		fechaActual=_date;
-	}
 	
 }
 	
