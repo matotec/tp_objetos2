@@ -17,6 +17,7 @@ import investigador.Investigador;
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.*;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import pregunta.DireccionDePregunta;
@@ -68,7 +69,7 @@ public class TestProyecto {
 		
 	}
 	
-	@Test
+	@Test 
 	void testObtenerMaximoCantidadDeRespuestas() {
 		unProyecto.agregarEncuesta(mockedEncuesta);
 		unProyecto.agregarEncuesta(mockedEncuesta2);
@@ -130,81 +131,45 @@ verify(mockedEncuesta, times(0)).recibirSubscripcion(mockedDireccionDePregunta);
 
 
 }
+@Test
+public void testGetNombre() {
+	String unNombre="Soy un nombre";
+	assertThat(unNombre,is(unProyecto.getNombre()));
 }
 
-//package proyecto;
-//
-//
-//import static org.junit.Assert.assertFalse;
-//import static org.junit.Assert.assertTrue;
-//
-//import static org.hamcrest.CoreMatchers.*;
-//import static org.junit.Assert.*;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//
-//import encuesta.Encuesta;
-//
-//import static org.mockito.Mockito.*;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//
-//public class TestProyecto {
-//	private Proyecto unProyecto;
-//	private Encuesta mockedEncuesta;
-//	private Encuesta mockedEncuesta2;
-//	private Encuesta mockedEncuesta3;
-//	private List<Encuesta> listaDeEncuestas;
-//	@BeforeEach 
-//	 public void setUp() {
-//		unProyecto= new Proyecto("Soy una descripcon","Soy un proposito","proyectoUno");
-//		mockedEncuesta=mock(Encuesta.class);
-//		mockedEncuesta2=mock(Encuesta.class);
-//		mockedEncuesta3=mock(Encuesta.class);
-//		listaDeEncuestas=new ArrayList<>();
-//	
-//	} 
-//	@Test
-//	void alCrearSeElProyectoPoseeUnaDescripcionYUnProposito() {
-//		assertFalse(unProyecto.getDescripcion().isEmpty());
-//		assertFalse(unProyecto.getProposito().isEmpty());
-//		assertTrue(unProyecto.obtenerEncuestas().isEmpty());
-//		
-//	}
-//	@Test
-//	public void agregarEncuestaAlProyecto() {
-//		unProyecto.agregarEncuesta(mockedEncuesta);
-//		assertFalse(unProyecto.obtenerEncuestas().isEmpty());
-//		assertTrue(unProyecto.obtenerEncuestas().contains(mockedEncuesta));
-//		
-//		
-//	}
-//	
-//	@Test
-//	void testObtenerMaximoCantidadDeRespuestas() {
-//		unProyecto.agregarEncuesta(mockedEncuesta);
-//		unProyecto.agregarEncuesta(mockedEncuesta2);
-//		when(mockedEncuesta.cantidadDeRespuestas()).thenReturn(2);
-//		when(mockedEncuesta2.cantidadDeRespuestas()).thenReturn(1);
-//		assertTrue(unProyecto.obtenerMaximoCantDeRespuestas()==2);
-//	}
-//	
-//	@Test 
-//	void testObtenerEncuestasConMaximoCantidadDeRespuestas() {
-//		unProyecto.agregarEncuesta(mockedEncuesta);
-//		unProyecto.agregarEncuesta(mockedEncuesta2);
-//		unProyecto.agregarEncuesta(mockedEncuesta3);
-//		listaDeEncuestas.add(mockedEncuesta);
-//		when(mockedEncuesta.cantidadDeRespuestas()).thenReturn(2);
-//		when(mockedEncuesta2.cantidadDeRespuestas()).thenReturn(1);
-//		when(mockedEncuesta3.cantidadDeRespuestas()).thenReturn(1);
-//		assertTrue(unProyecto.obtenerMaximoCantDeRespuestas()==2);
-//		assertThat(unProyecto.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(),is(listaDeEncuestas));
-//	} 
-//	
-//} 
-//	
-//
-//
+@Test
+public void testUsosEncuestas() {
+	List<Integer> usosDeEncuestas=new ArrayList<>();
+	unProyecto.agregarEncuesta(mockedEncuesta);
+	unProyecto.agregarEncuesta(mockedEncuesta2);
+	unProyecto.agregarEncuesta(mockedEncuesta3);
+	usosDeEncuestas.add(4);
+	usosDeEncuestas.add(10);
+	usosDeEncuestas.add(5);
+	when(mockedEncuesta.cantidadDeUsos()).thenReturn(4);
+	when(mockedEncuesta2.cantidadDeUsos()).thenReturn(10);
+	when(mockedEncuesta3.cantidadDeUsos()).thenReturn(5);
+	
+	assertThat(unProyecto.usosDeEncuestas(),is(usosDeEncuestas));
+}
+
+@Test
+public void testFechaDeEncuestas() {
+	List<Date> fechaDeEncuestas=new ArrayList<>();
+	unProyecto.agregarEncuesta(mockedEncuesta);
+	unProyecto.agregarEncuesta(mockedEncuesta2);
+	unProyecto.agregarEncuesta(mockedEncuesta3);
+	Date date1=new Date(1,1,1);
+	Date date2=new Date(2,2,2);
+	Date date3=new Date(3,3,3); 
+	
+	fechaDeEncuestas.add(date1);
+	fechaDeEncuestas.add(date2);
+	fechaDeEncuestas.add(date3);
+	when(mockedEncuesta.getDateCreacion()).thenReturn(date1);
+	when(mockedEncuesta2.getDateCreacion()).thenReturn(date2);
+	when(mockedEncuesta3.getDateCreacion()).thenReturn(date3);
+	
+	assertThat(unProyecto.fechaDeEncuestas(),is(fechaDeEncuestas));
+}
+} 

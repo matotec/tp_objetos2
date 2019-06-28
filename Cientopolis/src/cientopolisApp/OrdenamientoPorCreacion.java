@@ -1,10 +1,11 @@
 package cientopolisApp;
 
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 import java.util.Collections;
-import java.util.Date;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +26,7 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 		
 		return encuestasOrdenadas;
 	}
-
+ 
 	private List<Encuesta> encuestasConMismaFecha(Date _fecha, List<Proyecto> _proyectosDeApp) {
 		List<Encuesta> encuestasConMismaFecha= new ArrayList<>();
 		for(Proyecto proy:_proyectosDeApp) {
@@ -33,11 +34,11 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 		}
 		return encuestasConMismaFecha;
 	}
-
+	// _fecha.getYear()==enc.getDateCreacion().getYear()&&_fecha.getMonth()==enc.getDateCreacion().getMonth()&&_fecha.getDate()==enc.getDateCreacion().getDate()
 	private List<Encuesta> encuestaConMismaFechaDeProyecto(Date _fecha,List<Encuesta> _obtenerEncuestas) {
 		List<Encuesta> encuestas= new ArrayList<>();
 		for(Encuesta enc:_obtenerEncuestas) {
-			if(encuestas.size()!=20&& _fecha.getYear()==enc.getDateCreacion().getYear()&&_fecha.getMonth()==enc.getDateCreacion().getMonth()&&_fecha.getDate()==enc.getDateCreacion().getDate()  ) {
+			if(encuestas.size()!=20&& _fecha.compareTo(enc.getDateCreacion())==0   ) {
 				encuestas.add(enc);
 			}
 		}
@@ -47,7 +48,7 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 	private List<Date> fechasOrdenadas(CientopolisApp _cientopolisApp) {
 		List<Date> fechasDeEncuestasOrd= new ArrayList<>();
 		for(Proyecto proy:this.proyectosDeApp(_cientopolisApp)) {
-			fechasDeEncuestasOrd.addAll(this.fechasDeEncuestasDeProyecto(proy));
+			fechasDeEncuestasOrd.addAll(proy.fechaDeEncuestas());
 		}
 		Set<Date> hashSet = new HashSet<Date>(fechasDeEncuestasOrd);
         fechasDeEncuestasOrd.clear();
@@ -57,12 +58,5 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 		return fechasDeEncuestasOrd;
 	}
 
-	private List<Date> fechasDeEncuestasDeProyecto(Proyecto _proy) {
-		List<Date> fechasDeEncuestasDeProy= new ArrayList<>();
-		for(Encuesta enc:_proy.obtenerEncuestas()) {
-			fechasDeEncuestasDeProy.add(enc.getDateCreacion());
-		}
-		return fechasDeEncuestasDeProy;
-	}
 
 }

@@ -29,7 +29,7 @@ public class TestOrdenamientoPorCreacion {
 	private Encuesta mockEnc4;
 	List<Encuesta> encuestasOrdenadas;
 	
-	
+	 
 	@BeforeEach
 	void setUp() {
 		ordPorCreacion= new OrdenamientoPorUso();
@@ -49,6 +49,8 @@ public class TestOrdenamientoPorCreacion {
 		List<Proyecto> proyMockInv1= new ArrayList<>();
 		List<Encuesta> encuestasProy1=new ArrayList<>();
 		List<Encuesta> encuestasProy2=new ArrayList<>();
+		List<Date> fechasProy1= new ArrayList<>();
+		List<Date> fechasProy2= new ArrayList<>();
 		Date date1=new Date(1,1,1);
 		Date date2=new Date(2,2,2);
 		Date date3=new Date(3,3,3); 
@@ -63,10 +65,16 @@ public class TestOrdenamientoPorCreacion {
 		encuestasOrdenadas.add(mockEnc2);
 		encuestasOrdenadas.add(mockEnc3);
 		encuestasOrdenadas.add(mockEnc4);
+		fechasProy1.add(date1);
+		fechasProy1.add(date2);
+		fechasProy2.add(date3);
+		fechasProy2.add(date4); 
 		app.crearCuentaInvestigador(mockInv1);
 		when(mockInv1.getProyectos()).thenReturn(proyMockInv1);
 		when(mockProy1.obtenerEncuestas()).thenReturn(encuestasProy1);
 		when(mockProy2.obtenerEncuestas()).thenReturn(encuestasProy2);
+		when(mockProy1.fechaDeEncuestas()).thenReturn(fechasProy1);
+		when(mockProy2.fechaDeEncuestas()).thenReturn(fechasProy2);
 		when(mockEnc1.getDateCreacion()).thenReturn(date1);
 		when(mockEnc2.getDateCreacion()).thenReturn(date2);
 		when(mockEnc3.getDateCreacion()).thenReturn(date3);

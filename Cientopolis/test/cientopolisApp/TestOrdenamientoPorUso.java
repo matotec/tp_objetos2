@@ -41,7 +41,7 @@ public class TestOrdenamientoPorUso {
 		mockEnc4= mock (Encuesta.class);
 		encuestasOrdenadas= new ArrayList<>();
 	}
-
+ 
 	@Test
 	void testEncuestasOrdenadasPorCantidadDeUsos() {
 		List<Proyecto> proyMockInv1= new ArrayList<>();

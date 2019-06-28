@@ -20,10 +20,10 @@ public class ProyectoCompuesto extends Proyecto {
 			this.listadoDeEncuestas.addAll(this.subsProyectos.get(i).obtenerEncuestas());
 		}
 		return(this.listadoDeEncuestas);
-	}
+	} 
 	@Override
 	protected List<Proyecto> getSubProyectos() {
-		// TODO Auto-generated method stub
+		
 		return this.subsProyectos;
 	}
 	
