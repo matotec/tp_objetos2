@@ -71,7 +71,7 @@ private List<DireccionDePregunta> listasDeAlertas;
 	public void crearEncuesta(Encuesta encuestaNueva,Proyecto proyecto) {
 		proyecto.agregarEncuesta(encuestaNueva);
 		
-	}
+	} 
 	
 
 	public List<Encuesta> obtenerEncuestasDeProyecto(Proyecto proyecto) {

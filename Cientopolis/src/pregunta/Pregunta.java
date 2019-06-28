@@ -4,6 +4,8 @@ import java.util.List;
 
 import encuesta.Encuesta;
 import encuestado.Encuestado;
+import investigador.Investigador;
+import proyecto.Proyecto;
 import respuesta.Respuesta;
 
 public abstract class Pregunta {
@@ -15,6 +17,8 @@ public abstract class Pregunta {
 	protected String texto;
 	protected List<Respuesta> opciones;
 	protected List<Respuesta> respuestas;
+	protected List<DireccionDePregunta> direccionDePregunta;
+	protected DireccionDePregunta 		protocologoASubscribir;
 	
 	public void interaccionSiguientePregunta(Encuesta encuesta) {
 		this.getEstadoActual().proximaPregunta(this, encuesta);
@@ -77,7 +81,7 @@ public abstract class Pregunta {
 		respuestas.stream().forEach(respuesta -> {
 			encuesta.agregarRespuesta(respuesta);
 		});
-		
+		 
 		//en caso de no tener siguiente, cambia el estado de la encuesta a "Finalizada"
 		this.getRespuesta(respuestas).getControlSiguiente().responder(encuesta);
 		this.interaccionSiguientePregunta(encuesta);
@@ -89,5 +93,15 @@ public abstract class Pregunta {
 	}
 	
 	protected abstract void seteoTextoRespuesta(Respuesta respuesta, Encuestado encuestado);
+	
+	public void recibirSubscripcion(Investigador investigador, Proyecto unProyecto, Encuesta unaEncuesta,Respuesta unaRespuesta) {
+		this.protocologoASubscribir= new DireccionDePregunta(investigador,unProyecto,unaEncuesta);
+		this.protocologoASubscribir.setPregunta(this);
+		this.protocologoASubscribir.setRespuesta(unaRespuesta);
+		
+		
+		this.direccionDePregunta.add(this.protocologoASubscribir);
+		
+	}
 }
 
