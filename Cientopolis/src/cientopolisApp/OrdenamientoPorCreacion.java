@@ -1,25 +1,28 @@
 package cientopolisApp;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
 
 import java.util.Collections;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import encuesta.Encuesta;
 import proyecto.Proyecto;
 
 public class OrdenamientoPorCreacion extends Ordenamiento{
 
-	@Override
+	@Override  
 	public List<Encuesta> ordenar(CientopolisApp _cientopolisApp) {
 		List<Date> fechasDeEncuestasOrdenadas= this.fechasOrdenadas(_cientopolisApp);
 		for(Date fecha:fechasDeEncuestasOrdenadas) {
 			if(encuestasOrdenadas.size()<=20) {
 			encuestasOrdenadas.addAll(this.encuestasConMismaFecha(fecha,this.proyectosDeApp(_cientopolisApp)));
 			}
-		}
-		encuestasOrdenadas=encuestasOrdenadas.subList(0,20);
+		} 
+		
 		return encuestasOrdenadas;
 	}
 
@@ -34,7 +37,7 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 	private List<Encuesta> encuestaConMismaFechaDeProyecto(Date _fecha,List<Encuesta> _obtenerEncuestas) {
 		List<Encuesta> encuestas= new ArrayList<>();
 		for(Encuesta enc:_obtenerEncuestas) {
-			if(_fecha.compareTo(enc.getDateCreacion()) == 0 ) {
+			if(encuestas.size()!=20&& _fecha.getYear()==enc.getDateCreacion().getYear()&&_fecha.getMonth()==enc.getDateCreacion().getMonth()&&_fecha.getDate()==enc.getDateCreacion().getDate()  ) {
 				encuestas.add(enc);
 			}
 		}
@@ -46,6 +49,9 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 		for(Proyecto proy:this.proyectosDeApp(_cientopolisApp)) {
 			fechasDeEncuestasOrd.addAll(this.fechasDeEncuestasDeProyecto(proy));
 		}
+		Set<Date> hashSet = new HashSet<Date>(fechasDeEncuestasOrd);
+        fechasDeEncuestasOrd.clear();
+        fechasDeEncuestasOrd.addAll(hashSet);
 		Collections.sort(fechasDeEncuestasOrd);
 		Collections.reverse(fechasDeEncuestasOrd);
 		return fechasDeEncuestasOrd;
