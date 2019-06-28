@@ -31,7 +31,7 @@ public class OrdenamientoPorUso extends Ordenamiento {
 	private List<Encuesta> encuestaConMismoUsoDeProyecto(Integer _uso, List<Encuesta> _encuestas) {
 		List<Encuesta> encuestas= new ArrayList<>();
 		for(Encuesta enc:_encuestas) {
-			if(_uso == enc.cantidadDeUsos()) {
+		 	if(_uso == enc.cantidadDeUsos()) {
 				encuestas.add(enc);
 			}
 		}

@@ -25,7 +25,7 @@ public class TestProyecto {
 	private List<Encuesta> listaDeEncuestas;
 	@BeforeEach 
 	 public void setUp() {
-		unProyecto= new Proyecto("Soy una descripcon","Soy un proposito");
+		unProyecto= new Proyecto("Soy una descripcon","Soy un proposito","proyectoUno");
 		mockedEncuesta=mock(Encuesta.class);
 		mockedEncuesta2=mock(Encuesta.class);
 		mockedEncuesta3=mock(Encuesta.class);

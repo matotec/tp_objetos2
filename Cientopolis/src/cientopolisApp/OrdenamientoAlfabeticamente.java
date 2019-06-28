@@ -7,7 +7,7 @@ import java.util.List;
 import encuesta.Encuesta;
 import proyecto.Proyecto;
 
-public class OrdenarAlfabeticamente extends Ordenamiento{
+public class OrdenamientoAlfabeticamente extends Ordenamiento{
 	
 	
 	@Override
@@ -49,5 +49,5 @@ public class OrdenarAlfabeticamente extends Ordenamiento{
 		}
 		return allNombresProyectos;
 	}
-	
+	 
 }

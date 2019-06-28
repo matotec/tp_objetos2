@@ -18,7 +18,9 @@ import respuesta.Respuesta;
 
 import static org.mockito.Mockito.*;
 
+import java.sql.Date;
 import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -74,14 +76,14 @@ public class TestCientopolisApp {
 	@Test
 	public void testAgregarProyectoAInvestigador() {
 		app.crearCuentaInvestigador(mockInv1);
-		proy1=app.crearProyecto("_unProyecto", "_paraAlgo");
+		proy1=app.crearProyecto("_unProyecto", "_paraAlgo","proyectoUno");
 		app.agregarProyecto(mockInv1,proy1);		
 		verify(mockInv1).crearProyecto(proy1);
 	}
 	
 	@Test
 	public void testSeCreaProyecto() {
-		proy1=app.crearProyecto("_unProyecto", "_paraAlgo");
+		proy1=app.crearProyecto("_unProyecto", "_paraAlgo","proyectoUno");
 		assertTrue(proy1.getDescripcion() =="_unProyecto" );
 		assertTrue(proy1.getProposito() =="_paraAlgo" );
 	}
@@ -126,7 +128,7 @@ public class TestCientopolisApp {
 		assertTrue(app.obtenerProyectosDeInvestigador(mockInv1).size()== 1);
 		assertThat(app.obtenerProyectosDeInvestigador(mockInv1),is(listaDeProyecto));
 	} 
-	@Test
+	@Test 
 	public void testobtenerEncuestasFinalizadasConMayorCantidadDeRespuestas() {
 		app.crearCuentaInvestigador(mockInv1);
 		app.crearCuentaInvestigador(mockInv2);
@@ -139,5 +141,13 @@ public class TestCientopolisApp {
 		when(mockInv2.obtenerCantDeRespuestasMaximo()).thenReturn(3);
 		assertTrue(app.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas().size()==1);
 		assertThat(app.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(),is(listaDeEncuesta1));
+	} 
+	
+	@Test
+	public void testSeSeteaLaFechaActual() {
+		Date fechaActual=new Date(1,1,1);
+		Date fechaEsperada=new Date(1,1,1);
+		app.setFechaActual(fechaActual);
+		assertThat(app.getFechaActual(),is(fechaEsperada));
 	}
 }

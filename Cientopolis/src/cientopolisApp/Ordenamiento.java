@@ -19,6 +19,6 @@ public abstract class Ordenamiento {
 		}
 		
 		return proyectosRet;
-	}
+	} 
 	public abstract List<Encuesta> ordenar(CientopolisApp _cientopolisApp);
 }

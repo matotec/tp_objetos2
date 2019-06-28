@@ -29,7 +29,7 @@ public class TestInvestigador {
 	public void setUp() {
 		unInvestigador= new Investigador("Luis");
 		mockedEncuesta= mock (Encuesta.class);
-		proyecto=new Proyecto("unaDescripcion","unProposito");
+		proyecto=new Proyecto("unaDescripcion","unProposito","proyectoUno");
 		mockedProyecto= mock (Proyecto.class);
 		mockedProyecto2= mock (Proyecto.class);
 	}
