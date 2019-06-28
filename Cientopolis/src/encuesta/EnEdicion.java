@@ -8,23 +8,17 @@ import protocolo.ConectorPreguntaRespuestas;
 import protocolo.Protocolo;
 import respuesta.Respuesta;
 
-public class Finalizada implements IEstadoEncuesta {
+public class EnEdicion implements IEstadoEncuesta {
 	
 	private Pregunta preguntaInicial;
 	
-	public Finalizada(Pregunta preguntaInicial) {
+	public EnEdicion(Pregunta preguntaInicial) {
 		this.preguntaInicial = preguntaInicial;
 	}
 
 	@Override
 	public List<Respuesta> getRespuestas(List<Protocolo> protocolosCreados) {
-		List<Respuesta> respuestasARetornar = new ArrayList<Respuesta>();
-		
-		protocolosCreados.stream().forEach(
-				protocolo -> respuestasARetornar.addAll(protocolo.getRespuestas())
-		);
-		
-		return respuestasARetornar;
+		return new ArrayList<Respuesta>();
 	}
 
 	@Override
@@ -34,17 +28,17 @@ public class Finalizada implements IEstadoEncuesta {
 
 	@Override
 	public void setPregunta(Pregunta nuevaPreguntaInicial) {
-		// no hago nada porque solo se puede editar una encuesta en estado EnEdicion.
+		this.preguntaInicial = nuevaPreguntaInicial;
 	}
 
 	@Override
 	public IEstadoEncuesta siguienteEstado() {
-		return this;
+		return new Disponible(this.getPreguntaInicial());
 	}
 
 	@Override
 	public Boolean esFinalizada() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -61,24 +55,4 @@ public class Finalizada implements IEstadoEncuesta {
 			Pregunta preguntaActual) {
 		// no hago nada porque solo se puede responder una pregunta cuando la encuesta esta Disponible.
 	}
-	
 }
-//package encuesta;
-//
-//import java.util.List;
-//
-//import respuesta.Respuesta;
-//
-//public class Finalizada implements IEstadoEncuesta {
-//
-//	@Override
-//	public List<Respuesta> getRespuestas(Encuesta encuesta) {
-//		return encuesta.getRespuestasPrivado();
-//	}
-//
-//	@Override
-//	public Integer cantidadDeRespuestas(Encuesta encuesta) {
-//		return encuesta.cantidadDeRespuestasPrivado();
-//	}
-//	
-//}

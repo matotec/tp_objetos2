@@ -172,4 +172,4 @@ public void testFechaDeEncuestas() {
 	
 	assertThat(unProyecto.fechaDeEncuestas(),is(fechaDeEncuestas));
 }
-} 
+}  

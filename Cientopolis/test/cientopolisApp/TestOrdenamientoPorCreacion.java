@@ -6,8 +6,9 @@ import static org.junit.Assert.*;
 
 import static org.junit.Assert.assertTrue;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -66,7 +67,7 @@ public class TestOrdenamientoPorCreacion {
 		encuestasOrdenadas.add(mockEnc3);
 		encuestasOrdenadas.add(mockEnc4);
 		fechasProy1.add(date1);
-		fechasProy1.add(date2);
+		fechasProy1.add(date2); 
 		fechasProy2.add(date3);
 		fechasProy2.add(date4); 
 		app.crearCuentaInvestigador(mockInv1);

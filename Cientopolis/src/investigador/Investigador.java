@@ -90,7 +90,7 @@ public void subscribirseAPreguntaConRespuesta(Proyecto unProyecto, Encuesta unaE
 	unaPregunta.recibirSubscripcion(this,unProyecto,unaEncuesta,unaRespuesta);
 	
 	
-}
+} 
 
 public void suscribirseAProyecto(Proyecto unProyecto) {
 	unProyecto.recibirSubscripcion(this);

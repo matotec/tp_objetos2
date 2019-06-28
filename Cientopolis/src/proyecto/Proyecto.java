@@ -1,8 +1,8 @@
 package proyecto;
 
-import java.sql.Date;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -120,7 +120,7 @@ public abstract class Proyecto {
 		
 		return nombre;
 	}
-	
+	 
 	public List<Integer> usosDeEncuestas() {
 		List<Integer> usosDeEncuesta=new ArrayList<>();
 		for(Encuesta enc:listadoDeEncuestas) {
