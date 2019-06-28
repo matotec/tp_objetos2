@@ -9,7 +9,7 @@ public class TieneAnterior implements IControlAnterior {
 	public void anteriorPregunta(Pregunta preguntaActual, Protocolo protocoloActual) {
 		protocoloActual.setPreguntaActual(preguntaActual.getAnterior());
 	}
-
+ 
 }
 
 //package pregunta;

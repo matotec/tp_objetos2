@@ -136,6 +136,6 @@ public abstract class Proyecto {
 		}
 		return fechaDeEncuestas;
 	}
-	
+	 
 }
 

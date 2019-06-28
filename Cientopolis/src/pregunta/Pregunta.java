@@ -19,7 +19,7 @@ public abstract class Pregunta {
 
 	public void interaccionAnteriorPregunta(Protocolo protocoloActual) {
 		this.controlAnterior.anteriorPregunta(this, protocoloActual);
-	};
+	} 
 	
 	public String getTexto() {
 		return this.texto;
