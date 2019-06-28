@@ -19,7 +19,7 @@ import proyecto.Proyecto;
 
 
 public class TestOrdenamientoPorCreacion {
-	private OrdenamientoPorUso ordPorCreacion;
+	private OrdenamientoPorCreacion ordPorCreacion;
 	private CientopolisApp app;
 	private Investigador mockInv1;
 	private Proyecto mockProy1;
@@ -33,12 +33,12 @@ public class TestOrdenamientoPorCreacion {
 	 
 	@BeforeEach
 	void setUp() {
-		ordPorCreacion= new OrdenamientoPorUso();
+		ordPorCreacion= new OrdenamientoPorCreacion();
 		app= new CientopolisApp();
 		mockInv1= mock (Investigador.class);
 		mockProy1= mock (Proyecto.class);
 		mockProy2= mock (Proyecto.class);
-		mockEnc1= mock (Encuesta.class);
+		mockEnc1= mock (Encuesta.class); 
 		mockEnc2= mock (Encuesta.class);
 		mockEnc3= mock (Encuesta.class);
 		mockEnc4= mock (Encuesta.class);
@@ -62,10 +62,10 @@ public class TestOrdenamientoPorCreacion {
 		encuestasProy1.add(mockEnc2);
 		encuestasProy2.add(mockEnc3);
 		encuestasProy2.add(mockEnc4);
-		encuestasOrdenadas.add(mockEnc1);
-		encuestasOrdenadas.add(mockEnc2);
-		encuestasOrdenadas.add(mockEnc3);
 		encuestasOrdenadas.add(mockEnc4);
+		encuestasOrdenadas.add(mockEnc3);
+		encuestasOrdenadas.add(mockEnc2);
+		encuestasOrdenadas.add(mockEnc1);
 		fechasProy1.add(date1);
 		fechasProy1.add(date2); 
 		fechasProy2.add(date3);

@@ -152,7 +152,7 @@ public void testUsosEncuestas() {
 	
 	assertThat(unProyecto.usosDeEncuestas(),is(usosDeEncuestas));
 }
-
+ 
 @Test
 public void testFechaDeEncuestas() {
 	List<Date> fechaDeEncuestas=new ArrayList<>();
