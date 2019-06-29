@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+<class-diagram version="1.2.3" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
   <class id="1" language="java" name="encuesta.Disponible" project="Cientopolis" 
     file="/Cientopolis/src/encuesta/Disponible.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1984" y="1458"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="212" width="573" x="4243" y="3020"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -12,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="cientopolisApp.OrdenamientoPorUso" project="Cientopolis" 
     file="/Cientopolis/src/cientopolisApp/OrdenamientoPorUso.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1382" y="571"/>    
+    <position height="-1" width="-1" x="781" y="617"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +22,7 @@
   </class>  
   <class id="3" language="java" name="cientopolisApp.CientopolisApp" project="Cientopolis" 
     file="/Cientopolis/src/cientopolisApp/CientopolisApp.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="4172" y="300"/>    
+    <position height="-1" width="-1" x="2631" y="1419"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="cientopolisApp.OrdenamientoAlfabeticamente" project="Cientopolis" 
     file="/Cientopolis/src/cientopolisApp/OrdenamientoAlfabeticamente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="515" y="607"/>    
+    <position height="-1" width="-1" x="421" y="280"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +40,7 @@
   </class>  
   <class id="5" language="java" name="cientopolisApp.OrdenamientoPorCreacion" project="Cientopolis" 
     file="/Cientopolis/src/cientopolisApp/OrdenamientoPorCreacion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="961" y="575"/>    
+    <position height="-1" width="-1" x="341" y="554"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,8 +58,8 @@
   </class>  
   <class id="7" language="java" name="encuesta.Encuesta" project="Cientopolis" 
     file="/Cientopolis/src/encuesta/Encuesta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2214" y="987"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="341" width="892" x="320" y="2418"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -66,7 +67,7 @@
   </class>  
   <class id="8" language="java" name="encuesta.EnEdicion" project="Cientopolis" 
     file="/Cientopolis/src/encuesta/EnEdicion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2055" y="1910"/>    
+    <position height="-1" width="-1" x="6260" y="3489"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,8 +76,8 @@
   </class>  
   <class id="9" language="java" name="encuesta.Finalizada" project="Cientopolis" 
     file="/Cientopolis/src/encuesta/Finalizada.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1188" y="1887"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="207" width="573" x="5094" y="3163"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -84,7 +85,7 @@
   </class>  
   <interface id="10" language="java" name="encuesta.IEstadoEncuesta" project="Cientopolis" 
     file="/Cientopolis/src/encuesta/IEstadoEncuesta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="729" y="1232"/>    
+    <position height="-1" width="-1" x="862" y="3518"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +94,7 @@
   </interface>  
   <class id="11" language="java" name="investigador.Investigador" project="Cientopolis" 
     file="/Cientopolis/src/investigador/Investigador.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3648" y="237"/>    
+    <position height="-1" width="-1" x="1746" y="1829"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,8 +103,8 @@
   </class>  
   <class id="12" language="java" name="pregunta.DireccionDePregunta" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/DireccionDePregunta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2765" y="454"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="391" width="367" x="3180" y="1542"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -111,7 +112,7 @@
   </class>  
   <class id="13" language="java" name="pregunta.NoTieneAnterior" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/NoTieneAnterior.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5992" y="1633"/>    
+    <position height="-1" width="-1" x="5624" y="1731"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +121,7 @@
   </class>  
   <interface id="14" language="java" name="pregunta.IControlAnterior" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/IControlAnterior.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5667" y="1306"/>    
+    <position height="-1" width="-1" x="5299" y="1404"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,8 +130,8 @@
   </interface>  
   <class id="15" language="java" name="pregunta.Pregunta" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/Pregunta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5360" y="712"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="482" width="769" x="4200" y="1117"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -138,7 +139,7 @@
   </class>  
   <class id="16" language="java" name="pregunta.PreguntaMultiOpcionSimpleSeleccion" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/PreguntaMultiOpcionSimpleSeleccion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="6128" y="865"/>    
+    <position height="-1" width="-1" x="5453" y="430"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +148,7 @@
   </class>  
   <class id="17" language="java" name="pregunta.PreguntaMultiOpcionMultiSeleccion" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/PreguntaMultiOpcionMultiSeleccion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="6038" y="1085"/>    
+    <position height="-1" width="-1" x="5503" y="777"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +157,7 @@
   </class>  
   <class id="18" language="java" name="pregunta.PreguntaAbierta" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/PreguntaAbierta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5820" y="573"/>    
+    <position height="-1" width="-1" x="4879" y="305"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +166,7 @@
   </class>  
   <class id="19" language="java" name="pregunta.TieneAnterior" project="Cientopolis" 
     file="/Cientopolis/src/pregunta/TieneAnterior.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5589" y="1683"/>    
+    <position height="-1" width="-1" x="5221" y="1781"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +175,7 @@
   </class>  
   <class id="20" language="java" name="protocolo.Activo" project="Cientopolis" 
     file="/Cientopolis/src/protocolo/Activo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3454" y="2320"/>    
+    <position height="-1" width="-1" x="2840" y="2766"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -183,7 +184,7 @@
   </class>  
   <class id="21" language="java" name="protocolo.Protocolo" project="Cientopolis" 
     file="/Cientopolis/src/protocolo/Protocolo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="334" x="3344" y="1735"/>    
+    <position height="261" width="334" x="2730" y="2181"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,7 +193,7 @@
   </class>  
   <class id="22" language="java" name="protocolo.Finalizado" project="Cientopolis" 
     file="/Cientopolis/src/protocolo/Finalizado.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3048" y="2314"/>    
+    <position height="-1" width="-1" x="2434" y="2760"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -201,7 +202,7 @@
   </class>  
   <class id="23" language="java" name="protocolo.ConectorPreguntaRespuestas" project="Cientopolis" 
     file="/Cientopolis/src/protocolo/ConectorPreguntaRespuestas.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3533" y="2123"/>    
+    <position height="-1" width="-1" x="3545" y="2742"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -210,7 +211,7 @@
   </class>  
   <interface id="24" language="java" name="protocolo.IEstadoProtocolo" project="Cientopolis" 
     file="/Cientopolis/src/protocolo/IEstadoProtocolo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3096" y="2046"/>    
+    <position height="-1" width="-1" x="2482" y="2492"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -219,7 +220,7 @@
   </interface>  
   <class id="25" language="java" name="proyecto.ProyectoSimple" project="Cientopolis" 
     file="/Cientopolis/src/proyecto/ProyectoSimple.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1715" y="371"/>    
+    <position height="-1" width="-1" x="3050" y="446"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -228,8 +229,8 @@
   </class>  
   <class id="26" language="java" name="proyecto.Proyecto" project="Cientopolis" 
     file="/Cientopolis/src/proyecto/Proyecto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2131" y="299"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="347" width="415" x="1996" y="276"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -237,7 +238,7 @@
   </class>  
   <class id="27" language="java" name="proyecto.ProyectoCompuesto" project="Cientopolis" 
     file="/Cientopolis/src/proyecto/ProyectoCompuesto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1671" y="218"/>    
+    <position height="-1" width="-1" x="3109" y="677"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -246,7 +247,7 @@
   </class>  
   <class id="28" language="java" name="respuesta.TieneSiguiente" project="Cientopolis" 
     file="/Cientopolis/src/respuesta/TieneSiguiente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="4919" y="2139"/>    
+    <position height="-1" width="-1" x="4217" y="524"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,7 +256,7 @@
   </class>  
   <interface id="29" language="java" name="respuesta.IControlSiguiente" project="Cientopolis" 
     file="/Cientopolis/src/respuesta/IControlSiguiente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5220" y="2413"/>    
+    <position height="-1" width="-1" x="4425" y="264"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -264,7 +265,7 @@
   </interface>  
   <class id="30" language="java" name="respuesta.Respuesta" project="Cientopolis" 
     file="/Cientopolis/src/respuesta/Respuesta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5223" y="2193"/>    
+    <position height="-1" width="-1" x="3562" y="251"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -273,7 +274,7 @@
   </class>  
   <class id="31" language="java" name="respuesta.NoTieneSiguiente" project="Cientopolis" 
     file="/Cientopolis/src/respuesta/NoTieneSiguiente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5526" y="2139"/>    
+    <position height="-1" width="-1" x="4523" y="509"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -290,7 +291,9 @@
   </association>  
   <association id="35">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="36" name="subscriptoresPorRespuesta"/>      
+      <attribute id="36" name="subscriptoresPorRespuesta">        
+        <position height="18" width="143" x="2984" y="1773"/>      
+      </attribute>      
       <multiplicity id="37" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
@@ -342,7 +345,9 @@
   </association>  
   <association id="53">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="54" name="encuestasMayor"/>      
+      <attribute id="54" name="encuestasMayor">        
+        <position height="18" width="89" x="926" y="2361"/>      
+      </attribute>      
       <multiplicity id="55" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
@@ -458,7 +463,9 @@
   </association>  
   <association id="93">    
     <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="94" name="listadoDeEncuestas"/>      
+      <attribute id="94" name="listadoDeEncuestas">        
+        <position height="18" width="105" x="826" y="2312"/>      
+      </attribute>      
       <multiplicity id="95" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
@@ -474,7 +481,9 @@
   </association>  
   <association id="99">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="100" name="listaDeSubscriptoresPorProyecto"/>      
+      <attribute id="100" name="listaDeSubscriptoresPorProyecto">        
+        <position height="18" width="167" x="2904" y="1810"/>      
+      </attribute>      
       <multiplicity id="101" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
