@@ -14,7 +14,7 @@ public class Protocolo {
 	
 	private ConectorPreguntaRespuestas preguntasRespondidasYRespuestas;
 	
-	public Protocolo(Pregunta preguntaInicial, Encuesta encuesta) {
+	public Protocolo(Pregunta preguntaInicial, Encuesta encuesta ) {
 		this.estadoActual = new Activo();
 		this.preguntaActual = preguntaInicial;
 		this.encuesta = encuesta;
@@ -37,10 +37,7 @@ public class Protocolo {
 	public List<Respuesta> getRespuestas() {
 		return this.estadoActual.getRespuestas(this.preguntasRespondidasYRespuestas);
 	}
-	
-//	public Integer cantidadDeRespuestas() {
-//		return this.getRespuestas().size();
-//	}
+
 	
 	public void setEstado(IEstadoProtocolo nuevoEstado) {
 		this.estadoActual = nuevoEstado;
@@ -60,13 +57,14 @@ public class Protocolo {
 				.getControlSiguiente()
 				.proximaPregunta(this.getRespuestaDePreguntaActual(), this);
 		}
-	}
+	} 
 	
 	public void irAPreguntaAnterior() {
 		this.preguntaActual.interaccionAnteriorPregunta(this);
 	}
 	
-	public void responderPreguntaActual(List<Respuesta> respuestas) { //Aca asumo que el front end se encarga de que las respuestas pasadas por parametro sean opciones validas de la pregunta actual.
+	public void responderPreguntaActual(List<Respuesta> respuestas) { 
+		//Aca asumo que el front end se encarga de que las respuestas pasadas por parametro sean opciones validas de la pregunta actual.
 		this.encuesta.getEstadoActual().responderPreguntaProtocolo(
 				this,
 				respuestas,

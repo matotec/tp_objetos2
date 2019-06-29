@@ -30,7 +30,7 @@ public class Finalizada implements IEstadoEncuesta {
 	@Override
 	public Pregunta getPreguntaInicial() {
 		return this.preguntaInicial;
-	}
+	} 
 
 	@Override
 	public void setPregunta(Pregunta nuevaPreguntaInicial) {
@@ -63,22 +63,3 @@ public class Finalizada implements IEstadoEncuesta {
 	}
 	
 }
-//package encuesta;
-//
-//import java.util.List;
-//
-//import respuesta.Respuesta;
-//
-//public class Finalizada implements IEstadoEncuesta {
-//
-//	@Override
-//	public List<Respuesta> getRespuestas(Encuesta encuesta) {
-//		return encuesta.getRespuestasPrivado();
-//	}
-//
-//	@Override
-//	public Integer cantidadDeRespuestas(Encuesta encuesta) {
-//		return encuesta.cantidadDeRespuestasPrivado();
-//	}
-//	
-//}

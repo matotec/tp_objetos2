@@ -47,7 +47,7 @@ public class CientopolisApp {
 	public void agregarEncuesta(Investigador _investigador,Proyecto _proyecto,Encuesta _encuesta) {
 		this.obtenerInvestigador(_investigador).agregarEncuestaAProyecto(_proyecto,_encuesta);		
 	}
-	 
+	  
 	
 //implementar todos los mens.necesarios en las otras clases
 	public List<Respuesta> obtenerRespuestasDeEncuesta(Encuesta _encuesta) {
