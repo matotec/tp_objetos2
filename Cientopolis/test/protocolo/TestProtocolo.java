@@ -105,22 +105,15 @@ class TestProtocolo {
 
 	@Test
 	void testRegistrarPreguntaYRespuestasConGetRespuestasYConSetEstado() {
-//		DireccionDePregunta direccionMockeada = mock(DireccionDePregunta.class);
+
 		Investigador investigador = new Investigador("Sergio");
 		Investigador spyInvestigador = spy(investigador);
 		Proyecto proyectoMockeado = mock(Proyecto.class);
 		
-//		when(direccionMockeada.getUnInvestigador()).thenReturn(spyInvestigador);
-//		when(direccionMockeada.getUnProyecto()).thenReturn(proyectoMockeado);
-		
-//		List<DireccionDePregunta> suscripciones = new ArrayList<DireccionDePregunta>();
-//		suscripciones.add(direccionMockeada);
-		
-//		when(encuestaMockeada.getSubscripcionesPorProyecto()).thenReturn(suscripciones);
-		
+	
 		spyProtocolo1.registrarPreguntaYRespuestas(preguntaMockeadaA, arregloDeRespuestasMockeadasA);
 		
-//		verify(spyInvestigador, times(1)).recibirNovedades(isA(DireccionDePregunta.class));
+
 		
 		assertTrue(spyProtocolo1.getRespuestas().isEmpty());
 		
@@ -130,12 +123,6 @@ class TestProtocolo {
 		assertEquals(spyProtocolo1.getRespuestas(), arregloDeRespuestasMockeadasA);
 	}
 	
-//	@Test
-//	void testIrAPreguntaSiguiente() {
-//		spyProtocolo1.irAPreguntaSiguiente();
-//		
-////		verifyZeroInteractions(spyProtocolo1);
-//	}
 	
 	@Test
 	void testResponderPreguntaActualConIrAPreguntaSiguiente() {
@@ -171,10 +158,6 @@ class TestProtocolo {
 				respuestaMockeadaC,
 				preguntaMockeadaB);
 		
-//		verify(encuestaMockeada2, times(1)).setReferenciasYNotificar(any(ReferenciasNotificacion.class));
-//		verify(spyProtocolo2, times(1)).irAPreguntaSiguiente();
-		
-		
 	}
 	
 	@Test
@@ -188,7 +171,7 @@ class TestProtocolo {
 		verify(conectorMockeado, times(1)).estaRespondida(preguntaMockeadaA);
 		verify(conectorMockeado, times(0)).getRespuestasDePregunta(any(Pregunta.class));
 		
-		
+	 	
 		//Testeo con pregunta actual respondida
 		IControlSiguiente tieneSiguienteMock = mock(TieneSiguiente.class);
 		

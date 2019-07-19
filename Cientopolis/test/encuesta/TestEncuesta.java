@@ -76,43 +76,21 @@ public class TestEncuesta {
 		assertTrue(fechaCreacion.getSeconds()==nuevaFecha.getSeconds());
 	}
 	
-//	@Test
-//	public void testSetters() {
-//		assertEquals(preguntaMockeadaA, encuesta.getPreguntaActual());
-//		encuesta.setPregunta(preguntaMockeadaB);
-//		assertEquals(preguntaMockeadaB, encuesta.getPreguntaActual());
-//		
-//		assertTrue(encuesta.getEstadoActual() instanceof Disponible);
-//		encuesta.setEstado(new Finalizada());
-//		assertTrue(encuesta.getEstadoActual() instanceof Finalizada);
-//	}
 	
 	@Test
 	public void testSetPregunta() {
-//		IEstadoEncuesta estadoActual = encuesta.getEstadoActual();
-//		IEstadoEncuesta estadoSpy = spy(estadoActual);
-		
-		//Test EnEdicion
+
 		encuestaSpy.setPregunta(preguntaMockeadaB);
 		verify(encuestaSpy, times(1)).getEstadoActual();
 		
-		//Test Disponible
-		//pasarla a disponible y hacer el test.
 		
-		//Test Finalizada
-		//pasarla a finalizada y hacer el test.
-		
-//		encuesta.setPregunta(preguntaMockeadaB);
-//		verify(estadoSpy, times(1)).setPregunta(preguntaMockeadaB);
 	}
 	
 	@Test
 	public void testPasarASiguienteEstado() {
-//		IEstadoEncuesta estadoActual = encuesta.getEstadoActual();
-//		IEstadoEncuesta estadoSpy = spy(estadoActual);
 		assertTrue(encuesta.getEstadoActual() instanceof EnEdicion);
 		encuesta.pasarASiguienteEstado();
-//		verify(estadoSpy, times(1)).siguienteEstado();
+
 		assertTrue(encuesta.getEstadoActual() instanceof Disponible);
 		encuesta.pasarASiguienteEstado();
 		assertTrue(encuesta.getEstadoActual() instanceof Finalizada);
@@ -135,17 +113,14 @@ public class TestEncuesta {
 	@Test
 	public void testCrearProtocolo() {
 		
-		//Testeo con estado EnEdicion
+		
 		Protocolo nuevoProtocolo = encuestaSpy.crearProtocolo();
 		verify(encuestaSpy, times(1)).getEstadoActual();
-//		assertTrue(nuevoProtocolo == null && !(nuevoProtocolo instanceof Protocolo));
+
 		
-		//Testeo con estado Disponible
+	 	//Testeo con estado Disponible
 		encuestaSpy.pasarASiguienteEstado();
 		verify(encuestaSpy, times(2)).getEstadoActual();
-		
-//		IEstadoEncuesta estadoDisponible = encuestaSpy.getEstadoActual();
-//		IEstadoEncuesta estadoDisponibleSpy = spy(estadoDisponible);
 		
 		Protocolo protocoloDeDisponible = encuestaSpy.crearProtocolo();
 		verify(encuestaSpy, times(3)).getEstadoActual();
@@ -159,13 +134,7 @@ public class TestEncuesta {
 		
 		Protocolo protocoloDeFinalizada = encuestaSpy.crearProtocolo();
 		verify(encuestaSpy, times(5)).getEstadoActual();
-//		assertTrue(protocoloDeFinalizada == null && !(protocoloDeFinalizada instanceof Protocolo));
-		
-//		IEstadoEncuesta estadoSpy = spy(encuesta.getEstadoActual());
-//		encuesta.crearProtocolo();
-//		verify(estadoSpy, times(1)).crearProtocolo(encuesta);
-//		assertTrue(nuevoProtocolo instanceof Protocolo);
-		
+	
 		
 	}
 	
@@ -189,8 +158,6 @@ public class TestEncuesta {
 		IControlSiguiente spyTieneSiguiente = spy(tieneSiguiente);
 		when(respuestaMockeadaA.getControlSiguiente()).thenReturn(spyTieneSiguiente);
 		
-//		doCallRealMethod().when(respuestaMockeadaA).setReferenciasYNotificar(any(ReferenciasNotificacion.class));
-//		doCallRealMethod().when(respuestaMockeadaB).setReferenciasYNotificar(any(ReferenciasNotificacion.class));
 		when(protocoloMockeado.getEncuesta()).thenReturn(encuesta);
 		
 		estadoDisponible.responderPreguntaProtocolo(protocoloMockeado, respuestasMockeadas, conectorMockeado, respuestaMockeadaA, preguntaMockeadaA);
@@ -247,39 +214,7 @@ public class TestEncuesta {
 		assertEquals(respuestasFinalizada, respuestasMockeadas);
 		
 	}
-	
-//	@Test
-//	public void testRecibirSubscripcionARespuesta() {
-//		Investigador investigadorMockeado = mock(Investigador.class);
-//		Proyecto proyectoMockeado = mock(Proyecto.class);
-//		
-//		
-//		encuestaSpy.recibirSubscripcion(
-//				investigadorMockeado,
-//				proyectoMockeado,
-//				preguntaMockeadaA,
-//				respuestaMockeadaA
-//		);
-//		
-//		assertEquals(encuestaSpy.getSubscripcionesPorRespuesta().size(), 1);
-//		assertEquals(encuestaSpy.getSubscripcionesPorRespuesta().get(0).getUnInvestigador(), investigadorMockeado);
-//		assertEquals(encuestaSpy.getSubscripcionesPorRespuesta().get(0).getUnProyecto(), proyectoMockeado);
-//		assertEquals(encuestaSpy.getSubscripcionesPorRespuesta().get(0).getPregunta(), preguntaMockeadaA);
-//		assertEquals(encuestaSpy.getSubscripcionesPorRespuesta().get(0).getRespuestas().get(0), respuestaMockeadaA);
-//		assertEquals(encuestaSpy.getSubscripcionesPorRespuesta().get(0).getUnaEncuesta(), encuestaSpy);
-//	}
-	
-//	public void recibirSubscripcion(Investigador investigador, Proyecto unProyecto, Pregunta unaPregunta, Respuesta unaRespuesta) {
-//		DireccionDePregunta preguntaYRespuestaDeSubscripcion = new DireccionDePregunta(investigador,unProyecto,this);
-//		List<Respuesta> respuestas = new ArrayList<Respuesta>();
-//		respuestas.add(unaRespuesta);
-//		
-//		preguntaYRespuestaDeSubscripcion.setPregunta(unaPregunta);
-//		preguntaYRespuestaDeSubscripcion.setRespuestas(respuestas);
-//		
-//		this.subscriptoresPorRespuesta.add(preguntaYRespuestaDeSubscripcion);
-//	}
-//	
+		
 	@Test
 	public void testRecibirSubscripcionAProyecto() {
 		
@@ -292,7 +227,7 @@ public class TestEncuesta {
 		Protocolo protocoloMockeado = mock(Protocolo.class);
 		ConectorPreguntaRespuestas conectorMockeado = mock(ConectorPreguntaRespuestas.class);
 		
-//		IEstadoEncuesta estadoActual = encuestaSpy.getEstadoActual();
+
 		IEstadoEncuesta estadoMockeado = mock(Finalizada.class);
 		when(encuestaSpy.getEstadoActual()).thenReturn(estadoMockeado);
 		
@@ -301,69 +236,4 @@ public class TestEncuesta {
 		verify(encuestaSpy, times(1)).getEstadoActual();
 		verify(estadoMockeado, times(1)).responderPreguntaProtocolo(protocoloMockeado, respuestasMockeadas, conectorMockeado, respuestaMockeadaA, preguntaMockeadaA);
 	}
-	
-//	@Test
-//	public void testGetRespuestasAlEstado() {
-//		
-//	}
-	
-	
-//	@Test
-//	public void testAgregarRespuesta() {
-//		assertTrue(encuesta.getRespuestas().isEmpty());
-//		assertEquals(new Integer(0), encuesta.cantidadDeRespuestas());
-//		
-//		assertTrue(encuesta.getRespuestasPrivado().isEmpty());
-//		assertEquals(new Integer(0), encuesta.cantidadDeRespuestasPrivado());
-//		
-//		encuesta.agregarRespuesta(respuestaMockeadaA);
-//		
-//		assertTrue(encuesta.getRespuestas().isEmpty());
-//		assertEquals(new Integer(0), encuesta.cantidadDeRespuestas());
-//		
-//		assertFalse(encuesta.getRespuestasPrivado().isEmpty());
-//		assertEquals(new Integer(1), encuesta.cantidadDeRespuestasPrivado());
-//	}
-//	
-//	@Test
-//	public void testEstadoFinalizada() {
-//		assertTrue(encuesta.getRespuestas().isEmpty());
-//		assertEquals(new Integer(0), encuesta.cantidadDeRespuestas());
-//		
-//		encuesta.agregarRespuesta(respuestaMockeadaA);
-//		encuesta.agregarRespuesta(respuestaMockeadaB);
-//		encuesta.setEstado(new Finalizada());
-//		
-//		assertFalse(encuesta.getRespuestas().isEmpty());
-//		assertEquals(new Integer(2), encuesta.cantidadDeRespuestas());
-//	}
-//	
-//	@Test
-//	public void testIrAPreguntaAnterior() {
-//		encuesta.irAPreguntaAnterior();
-//		verify(preguntaMockeadaA, times(1)).interaccionAnteriorPregunta(encuesta);
-//	}
-//	
-//	@Test
-//	public void testIrAPreguntaSiguiente() {
-//		encuesta.irAPreguntaSiguiente();
-//		verify(preguntaMockeadaA, times(1)).interaccionSiguientePregunta(encuesta);
-//	}
-//	
-//	@Test
-//	public void testResponderPreguntaActual() {
-//		List<Respuesta> respuestasMockeadas = new ArrayList<Respuesta>();
-//		respuestasMockeadas.add(respuestaMockeadaA);
-//		respuestasMockeadas.add(respuestaMockeadaB);
-//		
-//		encuesta.responderPreguntaActual(respuestasMockeadas, encuestadoMockeado);
-//		
-//		verify(preguntaMockeadaA, times(1)).responder(respuestasMockeadas, encuestadoMockeado, encuesta);
-//	}
-//	
-//	@Test
-//	public void testGetOpcionesDePreguntaActual() {
-//		encuesta.getOpcionesDePreguntaActual();
-//		verify(preguntaMockeadaA, times(1)).getOpciones();
-//	}
 }

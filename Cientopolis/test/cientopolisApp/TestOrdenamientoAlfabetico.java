@@ -1,11 +1,11 @@
 package cientopolisApp;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.Mockito.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertTrue;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,5 +68,5 @@ public class TestOrdenamientoAlfabetico {
 		when(mockProy2.obtenerEncuestas()).thenReturn(encuestasProy2);
 		assertThat(OrdAlf.ordenar(app),is(encuestasOrdenadas));
 	} 
-	
+	 
 }

@@ -40,9 +40,6 @@ public class TestRespuesta {
 		preguntaMockeadaA = mock(Pregunta.class);
 		preguntaMockeadaB = mock(Pregunta.class);
 		
-//		List<Pregunta> arregloDePreguntasA = new ArrayList<Pregunta>();
-//		arregloDePreguntasA.add(preguntaMockeadaA);
-//		arregloDePreguntasA.add(preguntaMockeadaB);
 		
 		respuestaA = new Respuesta("");
 		respuestaB = new Respuesta("2 ambientes", preguntaMockeadaA);
@@ -70,10 +67,7 @@ public class TestRespuesta {
 		
 	}
 
-	@Test
-	public void testGetSiguientePreguntaSinSiguientePregunta() {
-		//Entiendo que no hace falta testear este escenario ya que no se deberia hacer un get de siguiente pregunta, cuando el estado de la pregunta actual es de ultima pregunta o pregunta unica.
-	}
+	
 	
 	@Test
 	public void testGetYSetSiguientePreguntaConSiguientePregunta() {
@@ -92,7 +86,7 @@ public class TestRespuesta {
 		assertTrue(respuestaC.getControlSiguiente() instanceof TieneSiguiente);
 		
 		respuestaA.setControlSiguiente(new TieneSiguiente());
-//		respuestaA.setSiguientePregunta(preguntaMockeadaA,preguntaMockeadaB);
+
 		
 		assertTrue(respuestaA.getControlSiguiente() instanceof TieneSiguiente);
 		
@@ -166,7 +160,7 @@ public class TestRespuesta {
 		spyRespuestaA.getControlSiguiente().setAnteriorASiguiente(preguntaMockeadaA, spyRespuestaA);
 		verify(spyRespuestaA, times(0)).getSiguientePregunta();
 	}
-	
+	 
 	@Test
 	public void testNoTieneSiguienteSetearComoAnteriorDeLaSiguiente() {
 		//test de "setearComoAnteriorDeLaSiguiente" en respuestaA

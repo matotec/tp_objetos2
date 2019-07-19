@@ -48,7 +48,7 @@ public class TestCientopolisApp {
 		mockInv1= mock (Investigador.class);
 		mockInv2= mock (Investigador.class);
 		mockProy1= mock(Proyecto.class);
-		//mockProy2= mock(Proyecto.class);
+		//mockProy2= mock(Proyecto.class); 
 		listaDeProyecto= new ArrayList<Proyecto>();
 		mockEncuesta1= mock(Encuesta.class);
 		mockEncuesta2= mock(Encuesta.class);
@@ -141,11 +141,14 @@ public class TestCientopolisApp {
 	
 	@Test 
 	public void testMensajeOrdenamiento() {
+		
 		List<Encuesta> encuestasOrdenadas = new ArrayList<Encuesta>();
 		encuestasOrdenadas.add(mockEncuesta1);
 		encuestasOrdenadas.add(mockEncuesta2);
 		when(ordPorUsoMock.ordenar(app)).thenReturn(encuestasOrdenadas);
 		assertThat(app.obtenerEncuestasOrdenadasPor(ordPorUsoMock),is(encuestasOrdenadas));
+	
+		
 	}
 	
 }

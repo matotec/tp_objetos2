@@ -45,7 +45,7 @@ public class TestObserver {
 		observableRespuesta = new Respuesta("Mayor de edad", preguntaMockeadaB);
 		
 		spyObservableRespuesta = spy(observableRespuesta);
-		
+		 
 		observableEncuesta = new Encuesta(preguntaMockeadaA);
 		spyObservableEncuesta = spy(observableEncuesta);
 		
@@ -55,15 +55,6 @@ public class TestObserver {
 		spyObserver1 = spy(observer1);
 		spyObserver2 = spy(observer2);
 		
-//		
-//		respuestaMockeadaA = mock(Respuesta.class);
-//		respuestaMockeadaB = mock(Respuesta.class);
-//		
-//		respuestasMockeadas = new ArrayList<Respuesta>();
-//		respuestasMockeadas.add(respuestaMockeadaA);
-//		respuestasMockeadas.add(respuestaMockeadaB);
-//		
-//		
 		
 	}
 	
@@ -132,17 +123,6 @@ public class TestObserver {
 		
 		
 		
-		
-//		assertTrue(encuesta.getEstadoActual() instanceof EnEdicion);
-//		assertTrue(encuesta.getRespuestas().isEmpty());
-//		assertEquals(new Integer(0), encuesta.cantidadDeRespuestas());
-//		assertEquals(new Integer(0), encuesta.cantidadDeUsos());
-//		assertTrue(encuesta.getDateCreacion() instanceof Date);
-//		Date fechaCreacion = encuesta.getDateCreacion();
-//		Date nuevaFecha = new Date();
-//		assertTrue(fechaCreacion.getDay()==nuevaFecha.getDay());
-//		assertTrue(fechaCreacion.getMinutes()==nuevaFecha.getMinutes());
-//		assertTrue(fechaCreacion.getSeconds()==nuevaFecha.getSeconds());
 	}
 	
 }
