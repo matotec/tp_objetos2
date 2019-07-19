@@ -15,7 +15,7 @@ public class NoTieneSiguiente implements IControlSiguiente {
  
 	@Override
 	public void responder(Protocolo protocoloActual) {
-		protocoloActual.setEstado(new Finalizado());
+		protocoloActual.finalizar();
 	}
 
 	@Override

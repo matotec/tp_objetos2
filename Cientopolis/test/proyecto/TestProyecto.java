@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import pregunta.DireccionDePregunta;
+import pregunta.ReferenciasNotificacion;
 
 public class TestProyecto {
 	private Proyecto unProyecto;
@@ -33,7 +33,7 @@ public class TestProyecto {
 	private ProyectoCompuesto unProyectoCompuesto;
 	private ProyectoCompuesto  otroProyectoCompuesto;
 	private Investigador mockedInvestigador;
-	private DireccionDePregunta mockedDireccionDePregunta;
+	private ReferenciasNotificacion mockedDireccionDePregunta;
 
 	
 	@BeforeEach 

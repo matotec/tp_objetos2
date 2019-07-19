@@ -3,22 +3,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import encuesta.Encuesta;
+import observer.Observado;
+import observer.Observador;
 import pregunta.Pregunta;
-import pregunta.DireccionDePregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
-
-
-
-
-
-public class Investigador {
+public class Investigador implements Observador{
  
 private String nombre;
-private List<Encuesta> encuestasMayor = new ArrayList<Encuesta>(); 
+private List<Encuesta> encuestasMayor = new ArrayList<Encuesta>();
 private List<Proyecto> listaDeProyectos;
-private List<DireccionDePregunta> listasDeAlertas;
 
 	public Investigador(String unNombre) {
 		this.nombre=unNombre;
@@ -83,26 +78,20 @@ private List<DireccionDePregunta> listasDeAlertas;
 		return (encuesta.getRespuestas());
 	}
 	
-
-
-
-public void subscribirseAPreguntaConRespuesta(Proyecto unProyecto, Encuesta unaEncuesta, Pregunta unaPregunta,Respuesta unaRespuesta) {
-	unaPregunta.recibirSubscripcion(this,unProyecto,unaEncuesta,unaRespuesta);
+	@Override
+	public void actualizar(Observado observable) {
+		observable.getReferencias();
+		//hacer algo eventualmente con dichas referencias (no especifica enunciado).
+		//seria delegar el comportamiento en caso de ser suscripcion de respuesta vs suscripcion de proyecto (por ejemplo).
+	}
 	
+	public void suscribirAProyecto(Proyecto proyecto) {
+		if (this.listaDeProyectos.contains(proyecto)) {
+			proyecto.suscribir(this);
+		}
+	}
 	
-} 
-
-public void suscribirseAProyecto(Proyecto unProyecto) {
-	unProyecto.recibirSubscripcion(this);
+	public void suscribirARespuesta(Respuesta respuesta) {
+		respuesta.agregar(this);
+	}
 }
- 
-
-public void recibirNovedades(DireccionDePregunta protocolo) {
- this.listasDeAlertas.add(protocolo);	
-}
-public List<DireccionDePregunta> getSubscripciones() {
-
-	return this.listasDeAlertas;
-}
-}
-

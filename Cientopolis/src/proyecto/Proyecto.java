@@ -1,6 +1,5 @@
 package proyecto;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +7,9 @@ import java.util.List;
 
 import encuesta.Encuesta;
 import investigador.Investigador;
-import pregunta.DireccionDePregunta;
+import observer.Observado;
+import pregunta.ReferenciasNotificacion;
+import respuesta.Respuesta;
 
 
 
@@ -19,8 +20,6 @@ public abstract class Proyecto {
 	private String descripcion;
 	private String nombre;
 	protected List<Encuesta> listadoDeEncuestas;
-	private Encuesta enc;
-	private DireccionDePregunta direccionASubscribir;
 
 	public Proyecto(String descripcion, String proposito, String nombre) {
 		this.descripcion=descripcion;
@@ -100,27 +99,13 @@ public abstract class Proyecto {
 
 
 	protected List<Proyecto> getSubProyectos(){
-	return this.subsProyectos;
-	}
-
-
-	public void recibirSubscripcion(Investigador investigador) {
-		for(int i=0;i<this.subsProyectos.size();i++) {
-			this.subsProyectos.get(i).recibirSubscripcion(investigador);
-		}
-		for(int i=0;i<this.listadoDeEncuestas.size();i++) {
-			this.direccionASubscribir= new DireccionDePregunta(investigador,this,this.listadoDeEncuestas.get(i));
-
-			
-			this.listadoDeEncuestas.get(i).recibirSubscripcion(this.direccionASubscribir);
-		}
+		return this.subsProyectos;
 	}
 	
 	public String getNombre() {
-		
 		return nombre;
 	}
-	 
+	
 	public List<Integer> usosDeEncuestas() {
 		List<Integer> usosDeEncuesta=new ArrayList<>();
 		for(Encuesta enc:listadoDeEncuestas) {
@@ -136,6 +121,13 @@ public abstract class Proyecto {
 		}
 		return fechaDeEncuestas;
 	}
-	 
+	
+	public void suscribir(Investigador investigador) {
+		for (Proyecto proyecto : this.subsProyectos) {
+			proyecto.suscribir(investigador);
+		}
+		for (Encuesta encuesta : this.listadoDeEncuestas) {
+			encuesta.agregar(investigador);
+		}
+	}
 }
-

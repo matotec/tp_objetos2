@@ -1,17 +1,14 @@
 package respuesta;
 
+import observer.Observado;
 import pregunta.Pregunta;
 
-public class Respuesta {
-	
-	//IMPORTANTE: Revisar si es necesario tener en cuenta el escenario del llamado al metodo
-	// "getSiguientePregunta" cuando no hay una "siguiente" seteada. (diria q no xq se valida
-	// desde Pregunta el estado de la pregunta actual, para saber si es la ultima).
+public class Respuesta extends Observado{
 	
 	private String texto;
 	private Pregunta siguiente;
 	private IControlSiguiente controlSiguiente;
-	 
+	
 	public Respuesta(String textoRta) {
 		this.texto = textoRta;
 		this.controlSiguiente = new NoTieneSiguiente();
@@ -38,12 +35,7 @@ public class Respuesta {
 		this.setearComoAnteriorDeLaSiguiente(preguntaActual);
 	} 
 	
-//	public void setSiguientePregunta(Pregunta siguientePregunta) {
-//		this.siguiente = siguientePregunta;
-//		this.controlSiguiente = new TieneSiguiente();
-//	}
-	
-	public Pregunta getSiguientePregunta() {
+	public Pregunta getSiguientePregunta() { //No valido aca porque valido en otro lado.
 		return this.siguiente;
 	}
 	
@@ -58,4 +50,4 @@ public class Respuesta {
 	public void setearComoAnteriorDeLaSiguiente(Pregunta preguntaActual) {
 		this.getControlSiguiente().setAnteriorASiguiente(preguntaActual, this);
 	}
-} 
+}

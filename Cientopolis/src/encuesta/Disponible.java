@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pregunta.Pregunta;
+import pregunta.ReferenciasNotificacion;
 import protocolo.ConectorPreguntaRespuestas;
 import protocolo.Protocolo;
 import respuesta.Respuesta;
@@ -43,9 +44,9 @@ public class Disponible implements IEstadoEncuesta {
 
 	@Override
 	public Protocolo crearProtocolo(Encuesta encuesta) {
-		return new Protocolo(this.getPreguntaInicial(), encuesta);
+		return new Protocolo(this.getPreguntaInicial(), encuesta, new ConectorPreguntaRespuestas());
 	}
- 
+
 	@Override
 	public void responderPreguntaProtocolo(
 			Protocolo protocoloActual,
@@ -53,6 +54,10 @@ public class Disponible implements IEstadoEncuesta {
 			ConectorPreguntaRespuestas conectorPreguntaRespuestas,
 			Respuesta respuestaPreguntaActual,
 			Pregunta preguntaActual) {
+		
+		//disparo el "notify" de los observables.
+		Encuesta encuestaActual = protocoloActual.getEncuesta();
+		this.notificarObservables(encuestaActual, preguntaActual, respuestas);
 		
 		//guardo la pregunta respondida junto con las respuestas seleccionadas en el conector.
 		conectorPreguntaRespuestas.registrarPreguntaYRespuestas(preguntaActual, respuestas);
@@ -63,6 +68,14 @@ public class Disponible implements IEstadoEncuesta {
 		//paso a la proxima pregunta en caso de tener siguiente tras contestar la pregunta actual.
 		protocoloActual.irAPreguntaSiguiente();
 		
+	}
+	
+	private void notificarObservables(Encuesta encuesta, Pregunta pregunta, List<Respuesta> respuestas) {
+		ReferenciasNotificacion referencias = new ReferenciasNotificacion(encuesta, pregunta, respuestas);
+		encuesta.setReferenciasYNotificar(referencias);
+		for (Respuesta respuesta : respuestas) {
+			respuesta.setReferenciasYNotificar(referencias);
+		}
 	}
 
 }

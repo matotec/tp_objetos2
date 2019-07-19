@@ -14,12 +14,10 @@ public abstract class Pregunta {
 	protected Pregunta anterior;
 	protected String texto;
 	protected List<Respuesta> opciones;
-//	protected List<DireccionDePregunta> direccionDePregunta;
-//	protected DireccionDePregunta protocologoASubscribir;
 
 	public void interaccionAnteriorPregunta(Protocolo protocoloActual) {
 		this.controlAnterior.anteriorPregunta(this, protocoloActual);
-	} 
+	};
 	
 	public String getTexto() {
 		return this.texto;
@@ -37,6 +35,5 @@ public abstract class Pregunta {
 	public Pregunta getAnterior() { //No necesito validar aca porque ya valido antes de llamar este metodo
 		return this.anterior;
 	}
-	
 }
 

@@ -32,7 +32,7 @@ public class ConectorPreguntaRespuestas {
 		} else {
 			return new ArrayList<Respuesta>();
 		}
-	} 
+	}
 	
 	public List<Respuesta> getTodasLasRespuestas() {
 		List<Respuesta> listaARetornar = 
