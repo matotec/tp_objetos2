@@ -1,9 +1,7 @@
 package respuesta;
 
-import encuesta.Encuesta;
-import encuesta.Finalizada;
 import pregunta.Pregunta;
-import protocolo.Finalizado;
+
 import protocolo.Protocolo;
 
 public class NoTieneSiguiente implements IControlSiguiente {

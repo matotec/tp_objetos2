@@ -1,6 +1,6 @@
 package proyecto;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import encuesta.Encuesta;
@@ -10,7 +10,7 @@ public class ProyectoCompuesto extends Proyecto {
 	public ProyectoCompuesto(String descripcion, String proposito, String _nombre) {
 		super(descripcion, proposito,_nombre);
 		
-		// TODO Auto-generated constructor stub
+		
 	}
 	public void agregarSubProyectos(Proyecto unProyecto) {
 		this.subsProyectos.add(unProyecto);

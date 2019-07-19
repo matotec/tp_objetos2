@@ -7,9 +7,6 @@ import java.util.List;
 
 import encuesta.Encuesta;
 import investigador.Investigador;
-import observer.Observado;
-import pregunta.ReferenciasNotificacion;
-import respuesta.Respuesta;
 
 
 
@@ -52,7 +49,7 @@ public abstract class Proyecto {
 	}
 
 	
-//recorro todas las encuestas y me quedo con la cant maxima de respuestas
+
 	public int obtenerMaximoCantDeRespuestas() {
 		int maximoCantDeRespuestas=0;
 		for(Encuesta e:listadoDeEncuestas) {
@@ -64,7 +61,7 @@ public abstract class Proyecto {
 	}
 
 	
-//	recorro todas las encuestas y me quedo con las q tienen la maxima cant de respuestas
+
 	public List<Encuesta> obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(){
 		List<Encuesta> encuestasConMayorCantDeRespuestas=new ArrayList<Encuesta>();
 		int maximaCantDeRespuestas=this.obtenerMaximoCantDeRespuestas();
@@ -130,4 +127,4 @@ public abstract class Proyecto {
 			encuesta.agregar(investigador);
 		}
 	}
-}
+} 

@@ -14,4 +14,4 @@ public class PreguntaAbierta extends Pregunta {
 		respuestaSinTexto.setearComoAnteriorDeLaSiguiente(this);
 	}
 	
-}
+} 

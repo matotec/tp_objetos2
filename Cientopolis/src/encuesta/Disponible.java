@@ -16,7 +16,7 @@ public class Disponible implements IEstadoEncuesta {
 	public Disponible(Pregunta preguntaInicial) {
 		this.preguntaInicial = preguntaInicial;
 	}
-	
+	 
 	@Override
 	public List<Respuesta> getRespuestas(List<Protocolo> protocolosCreados) {
 		return new ArrayList<Respuesta>();

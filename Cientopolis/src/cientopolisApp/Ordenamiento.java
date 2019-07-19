@@ -17,7 +17,7 @@ public abstract class Ordenamiento {
 		for(Investigador inv:_cientopolisApp.getInvestigadores()) {
 			proyectosRet.addAll(inv.getProyectos());
 		}
-		
+		 
 		return proyectosRet;
 	} 
 	public abstract List<Encuesta> ordenar(CientopolisApp _cientopolisApp);

@@ -2,11 +2,9 @@ package pregunta;
 
 import java.util.List;
 
-//import encuesta.Encuesta;
+
 import protocolo.Protocolo;
 import respuesta.Respuesta;
-//import investigador.Investigador;
-//import proyecto.Proyecto;
 
 public abstract class Pregunta {
 	
@@ -32,7 +30,7 @@ public abstract class Pregunta {
 		this.controlAnterior = new TieneAnterior();
 	}
 	
-	public Pregunta getAnterior() { //No necesito validar aca porque ya valido antes de llamar este metodo
+	public Pregunta getAnterior() { 
 		return this.anterior;
 	}
 }

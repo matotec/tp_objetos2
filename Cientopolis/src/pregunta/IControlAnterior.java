@@ -1,6 +1,6 @@
 package pregunta;
 
-//import encuesta.Encuesta;
+
 import protocolo.Protocolo;
 
 public interface IControlAnterior {

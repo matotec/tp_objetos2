@@ -10,14 +10,6 @@ import investigador.Investigador;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
-// Crear cuentas para los investigadores y todo lo referente a ello.
-// Crear proyectos y lo referente a ellos.
-// Crear encuestas nuevas.
-// Responder a una encuesta y registrar sus respuestas.
-// Obtener todas las respuestas de una encuesta.
-// Obtener las encuestas de un proyecto.
-// Obtener los proyectos de un investigador.
-// Obtener las encuestas finalizadas con mayor cantidad de respuestas.
 
 public class CientopolisApp {
 	private List<Investigador> investigadores;
@@ -26,7 +18,7 @@ public class CientopolisApp {
 		investigadores= new ArrayList<Investigador>();
 	} 
 	
-//esto seria crear una cuenta de investigador	
+	
 	public void crearCuentaInvestigador(Investigador _investigador) {
 		investigadores.add(_investigador);
 	}
@@ -35,21 +27,19 @@ public class CientopolisApp {
 		return investigadores;
 	}
 	
-//esto seria agregar un proyecto
+
 	public void agregarProyecto(Investigador _investigador,Proyecto _proyecto) {
 		this.obtenerInvestigador(_investigador).crearProyecto(_proyecto);
 	}
 	
 
 	
-//agregar encuesta
-//preguntar a nelson si le sirve esto
 	public void agregarEncuesta(Investigador _investigador,Proyecto _proyecto,Encuesta _encuesta) {
 		this.obtenerInvestigador(_investigador).agregarEncuestaAProyecto(_proyecto,_encuesta);		
 	}
 	  
 	
-//implementar todos los mens.necesarios en las otras clases
+
 	public List<Respuesta> obtenerRespuestasDeEncuesta(Encuesta _encuesta) {
 		List<Respuesta> respuestasDeEncuesta=new ArrayList<Respuesta>();
 		
@@ -61,11 +51,11 @@ public class CientopolisApp {
 		return respuestasDeEncuesta;
 	}
 	
-//implementar todos los mens.necesarios en las otras clases 
+ 
 	public List<Encuesta> obtenerEncuestasDeProyecto(Proyecto _proyecto){
 		List<Encuesta> encuestasDeProyecto=new ArrayList<Encuesta>();
 		for(Investigador inv:investigadores) {
-			//el if esta bien hecho?
+			
 			if(!(inv.obtenerEncuestasDeProyecto(_proyecto).isEmpty())) {
 				encuestasDeProyecto=inv.obtenerEncuestasDeProyecto(_proyecto);
 			};
@@ -73,7 +63,7 @@ public class CientopolisApp {
 		return encuestasDeProyecto;
 	}
 		
-//implementar todos los mens.necesarios en las otras clases
+
 	public List<Proyecto> obtenerProyectosDeInvestigador(Investigador _investigador){
 		List<Proyecto> proyectosDeInvestigador=new ArrayList<Proyecto>();
 		if(investigadores.contains(_investigador)) {
@@ -82,7 +72,7 @@ public class CientopolisApp {
 		return proyectosDeInvestigador;
 	}
 	
-//aca necesito q se implementen mensajes en proyecto e investigador y encuesta	
+	
 	public List<Encuesta> obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(){
 		List<Encuesta> encuestasConMayorCantDeRespuestas=new ArrayList<Encuesta>();
 		int maximaCantDeRespuestas=this.obtenerMaximoCantDeRespuestas();
@@ -100,7 +90,7 @@ public class CientopolisApp {
 	public int obtenerMaximoCantDeRespuestas() {
 		int cantDeRespuestasMaximo=0;
 		for(Investigador inv:investigadores) {
-			//esto es un int con el maximo cant de respuestas q tiene alguna encuesta
+			
 			if( cantDeRespuestasMaximo < inv.obtenerCantDeRespuestasMaximo()) {
 				cantDeRespuestasMaximo=inv.obtenerCantDeRespuestasMaximo();
 			} 
@@ -117,7 +107,7 @@ public class CientopolisApp {
 			if(_investigador.equals(investigadores.get(i))) {
 				investigadorARetornar= investigadores.get(i);
 			}
-		}
+		} 
 		return investigadorARetornar;
 	}
 

@@ -7,7 +7,7 @@ import proyecto.Proyecto;
 
 public class OrdenamientoPorUso extends Ordenamiento {
 	
-	
+	 
 	@Override
 	public List<Encuesta> ordenar(CientopolisApp _cientopolisApp) {
 		List<Integer> usosDeMayorAMenor= this.usosDeEncuestasOrdenados(_cientopolisApp);
@@ -17,7 +17,7 @@ public class OrdenamientoPorUso extends Ordenamiento {
 			}
 		}
 		
-		//encuestasOrdenadas=encuestasOrdenadas.subList(0,25);
+		
 		return encuestasOrdenadas;
 	}
 

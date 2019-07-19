@@ -3,9 +3,9 @@ package protocolo;
 import java.util.List;
 
 import encuesta.Encuesta;
-import investigador.Investigador;
+
 import pregunta.Pregunta;
-import proyecto.Proyecto;
+
 import respuesta.Respuesta;
 
 public class Protocolo {
@@ -33,7 +33,7 @@ public class Protocolo {
 	}
 	
 	public void registrarPreguntaYRespuestas(Pregunta pregunta, List<Respuesta> respuestas) {
-		//registro "localmente" en el conector
+
 		this.preguntasRespondidasYRespuestas.registrarPreguntaYRespuestas(pregunta, respuestas);
 	}
 	
@@ -41,10 +41,6 @@ public class Protocolo {
 		return this.estadoActual.getRespuestas(this.preguntasRespondidasYRespuestas);
 	}
 	
-//	public void setEstado(IEstadoProtocolo nuevoEstado) {//tengo que volar este metodo y poner uno que sea "finalizar()"
-//		this.estadoActual = nuevoEstado;
-//	}
-//	
 	private Boolean estaRespondidaLaActual() {
 		return this.preguntasRespondidasYRespuestas.estaRespondida(preguntaActual);
 	}
@@ -73,7 +69,7 @@ public class Protocolo {
 				respuestas.get(0),
 				preguntaActual
 		);
-	}
+	} 
 	
 	public Encuesta getEncuesta() {
 		return this.encuesta;

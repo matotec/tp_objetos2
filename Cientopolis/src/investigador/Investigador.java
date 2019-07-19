@@ -5,14 +5,12 @@ import java.util.List;
 import encuesta.Encuesta;
 import observer.Observado;
 import observer.Observador;
-//import pregunta.Pregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
 public class Investigador implements Observador{
  
 private String nombre;
-//private List<Encuesta> encuestasMayor = new ArrayList<Encuesta>();
 private List<Proyecto> listaDeProyectos;
 
 	public Investigador(String unNombre) {
@@ -81,8 +79,7 @@ private List<Proyecto> listaDeProyectos;
 	@Override
 	public void actualizar(Observado observable) {
 		observable.getReferencias();
-		//hacer algo eventualmente con dichas referencias (no especifica enunciado).
-		//seria delegar el comportamiento en caso de ser suscripcion de respuesta vs suscripcion de proyecto (por ejemplo).
+		
 	}
 	
 	public void suscribirAProyecto(Proyecto proyecto) {

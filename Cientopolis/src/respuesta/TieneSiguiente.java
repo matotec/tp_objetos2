@@ -1,6 +1,6 @@
 package respuesta;
 
-import encuesta.Encuesta;
+
 import pregunta.Pregunta;
 import protocolo.Protocolo;
 

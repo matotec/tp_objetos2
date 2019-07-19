@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pregunta.ReferenciasNotificacion;
-
+ 
 public abstract class Observado {
 	private List<Observador> observers = new ArrayList<Observador>();
 	private ReferenciasNotificacion referencias;
@@ -23,7 +23,6 @@ public abstract class Observado {
 		return this.referencias;
 	};
 	
-	//Usado para garantizar que antes de notificar, "las referencias" sean consistentes.
 	public void setReferenciasYNotificar(ReferenciasNotificacion nuevasReferencias) {
 		this.setReferencias(nuevasReferencias);
 		this.notificar();

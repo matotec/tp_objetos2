@@ -34,14 +34,14 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 		}
 		return encuestasConMismaFecha;
 	}
-	// _fecha.getYear()==enc.getDateCreacion().getYear()&&_fecha.getMonth()==enc.getDateCreacion().getMonth()&&_fecha.getDate()==enc.getDateCreacion().getDate()
+
 	private List<Encuesta> encuestaConMismaFechaDeProyecto(Date _fecha,List<Encuesta> _obtenerEncuestas) {
 		List<Encuesta> encuestas= new ArrayList<>();
 		for(Encuesta enc:_obtenerEncuestas) {
 			if(encuestas.size()!=20&& _fecha.compareTo(enc.getDateCreacion())==0   ) {
 				encuestas.add(enc);
 			}
-		}
+		} 
 		return encuestas;
 	}
  

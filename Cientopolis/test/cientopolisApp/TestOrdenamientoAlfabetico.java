@@ -46,7 +46,7 @@ public class TestOrdenamientoAlfabetico {
 	
 	
 	@Test
-	void testEncuestasOrdenadasPorProyectosOrdenadosAlfabeticamente() {
+	public void testEncuestasOrdenadasPorProyectosOrdenadosAlfabeticamente() {
 		List<Proyecto> proyMockInv1= new ArrayList<>();
 		List<Encuesta> encuestasProy1=new ArrayList<>();
 		List<Encuesta> encuestasProy2=new ArrayList<>();
@@ -68,4 +68,5 @@ public class TestOrdenamientoAlfabetico {
 		when(mockProy2.obtenerEncuestas()).thenReturn(encuestasProy2);
 		assertThat(OrdAlf.ordenar(app),is(encuestasOrdenadas));
 	} 
+	
 }
