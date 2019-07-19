@@ -13,7 +13,7 @@ public abstract class Observado {
 		if (!observers.contains(observer)) {
 			this.observers.add(observer);
 		}
-	};
+	}; 
 	
 	public void remover(Observador observer) {
 		this.observers.remove(observer);

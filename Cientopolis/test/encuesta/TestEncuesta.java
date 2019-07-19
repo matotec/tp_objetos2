@@ -45,7 +45,7 @@ public class TestEncuesta {
 	@BeforeEach
 	public void setUp() {
 		
-		preguntaMockeadaA = mock(Pregunta.class);
+		preguntaMockeadaA = mock(Pregunta.class); 
 		preguntaMockeadaB = mock(Pregunta.class);
 		
 		respuestaMockeadaA = mock(Respuesta.class);

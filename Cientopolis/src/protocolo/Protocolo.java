@@ -9,7 +9,7 @@ import pregunta.Pregunta;
 import respuesta.Respuesta;
 
 public class Protocolo {
-
+ 
 	private IEstadoProtocolo estadoActual;
 	private Pregunta preguntaActual;
 	private Encuesta encuesta;

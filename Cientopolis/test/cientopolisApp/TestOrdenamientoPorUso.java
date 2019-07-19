@@ -60,7 +60,7 @@ public class TestOrdenamientoPorUso {
 		encuestasOrdenadas.add(mockEnc1);
 		encuestasOrdenadas.add(mockEnc2);
 		usosDeEncProy1.add(10);
-		usosDeEncProy1.add(30); 
+		usosDeEncProy1.add(30);  
 		usosDeEncProy2.add(40);
 		usosDeEncProy2.add(40);
 		app.crearCuentaInvestigador(mockInv1);

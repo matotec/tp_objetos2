@@ -40,7 +40,7 @@ public class OrdenamientoAlfabeticamente extends Ordenamiento{
 		}
 		return proyRet;
 	}
- 
+  
 	private List<String> nombresDeProyectos(CientopolisApp _cientopolisApp) {
 		List<String> allNombresProyectos= new ArrayList<>();
 		for(Proyecto proy:this.proyectosDeApp(_cientopolisApp)) {

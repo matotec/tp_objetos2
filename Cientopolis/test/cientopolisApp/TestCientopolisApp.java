@@ -138,7 +138,7 @@ public class TestCientopolisApp {
 		assertTrue(app.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas().size()==1);
 		assertThat(app.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(),is(listaDeEncuesta1));
 	} 
-	
+	 
 	@Test 
 	public void testMensajeOrdenamiento() {
 		

@@ -117,7 +117,7 @@ public abstract class Proyecto {
 			fechaDeEncuestas.add(enc.getDateCreacion());			
 		}
 		return fechaDeEncuestas;
-	}
+	} 
 	
 	public void suscribir(Investigador investigador) {
 		for (Proyecto proyecto : this.subsProyectos) {

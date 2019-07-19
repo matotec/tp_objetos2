@@ -22,7 +22,7 @@ public class OrdenamientoPorCreacion extends Ordenamiento{
 			if(encuestasOrdenadas.size()<=20) {
 			encuestasOrdenadas.addAll(this.encuestasConMismaFecha(fecha,this.proyectosDeApp(_cientopolisApp)));
 			}
-		} 
+		}  
 		
 		return encuestasOrdenadas;
 	}

@@ -68,7 +68,7 @@ public class Disponible implements IEstadoEncuesta {
 		//paso a la proxima pregunta en caso de tener siguiente tras contestar la pregunta actual.
 		protocoloActual.irAPreguntaSiguiente();
 		
-	}
+	} 
 	
 	private void notificarObservables(Encuesta encuesta, Pregunta pregunta, List<Respuesta> respuestas) {
 		ReferenciasNotificacion referencias = new ReferenciasNotificacion(encuesta, pregunta, respuestas);

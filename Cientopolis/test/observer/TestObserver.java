@@ -110,7 +110,7 @@ public class TestObserver {
 		verifyZeroInteractions(spyObserver1);
 		verifyZeroInteractions(spyObserver2);
 		
-		spyObservableEncuesta.agregar(spyObserver1);
+		spyObservableEncuesta.agregar(spyObserver1); 
 		
 		spyObservableEncuesta.setReferenciasYNotificar(referenciasMockeadas);
 		

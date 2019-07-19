@@ -56,7 +56,7 @@ public class Encuesta extends Observado {
 	
 	public List<Respuesta> getRespuestas() {
 		return this.getEstadoActual().getRespuestas(this.protocolosCreados);
-	}
+	} 
 	
 	public void responderPreguntaProtocolo(
 			Protocolo protocoloActual,

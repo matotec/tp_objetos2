@@ -79,7 +79,7 @@ private List<Proyecto> listaDeProyectos;
 	@Override
 	public void actualizar(Observado observable) {
 		observable.getReferencias();
-		
+		 
 	}
 	
 	public void suscribirAProyecto(Proyecto proyecto) {
