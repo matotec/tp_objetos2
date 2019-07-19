@@ -18,7 +18,7 @@ public class OrdenamientoAlfabeticamente extends Ordenamiento{
 		for(Proyecto proy:proyectosOrdenados) {
 			encuestasOrdenadas.addAll(proy.obtenerEncuestas());
 		}
-		
+		 
 		return encuestasOrdenadas;
 	}
 

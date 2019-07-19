@@ -29,7 +29,7 @@ public class TestOrdenamientoAlfabetico {
 	private Encuesta mockEnc4;
 	List<Encuesta> encuestasOrdenadas;
 	
-	@BeforeEach
+	@BeforeEach 
 	public void setUp(){
 		OrdAlf= new OrdenamientoAlfabeticamente();
 		app= new CientopolisApp();

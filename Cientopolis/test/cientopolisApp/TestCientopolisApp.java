@@ -26,11 +26,11 @@ import java.util.List;
 
 public class TestCientopolisApp {
 	private CientopolisApp app;
+	private OrdenamientoPorUso ordPorUsoMock;
 	private Investigador mockInv1;
 	private Investigador mockInv2;
 	private Proyecto proy1;
 	private Proyecto mockProy1;
-	//private Proyecto mockProy2;
 	private List<Proyecto> listaDeProyecto;
 	private Encuesta mockEncuesta1;
 	private Encuesta mockEncuesta2;
@@ -38,12 +38,13 @@ public class TestCientopolisApp {
 	private List<Encuesta> listaDeEncuesta1;
 	private Respuesta mockResp1;
 	private Respuesta mockResp2;
-	//private Respuesta mockResp3;
+	
 	private List<Respuesta> listaDeRespuesta;
 	
-	@BeforeEach
+	@BeforeEach 
 	public void setUp() {
 		app= new CientopolisApp();
+		ordPorUsoMock= mock (OrdenamientoPorUso.class);
 		mockInv1= mock (Investigador.class);
 		mockInv2= mock (Investigador.class);
 		mockProy1= mock(Proyecto.class);
@@ -138,5 +139,13 @@ public class TestCientopolisApp {
 		assertThat(app.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(),is(listaDeEncuesta1));
 	} 
 	
+	@Test 
+	public void testMensajeOrdenamiento() {
+		List<Encuesta> encuestasOrdenadas = new ArrayList<Encuesta>();
+		encuestasOrdenadas.add(mockEncuesta1);
+		encuestasOrdenadas.add(mockEncuesta2);
+		when(ordPorUsoMock.ordenar(app)).thenReturn(encuestasOrdenadas);
+		assertThat(app.obtenerEncuestasOrdenadasPor(ordPorUsoMock),is(encuestasOrdenadas));
+	}
 	
 }
