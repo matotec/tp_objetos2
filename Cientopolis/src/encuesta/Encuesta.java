@@ -1,18 +1,18 @@
 package encuesta;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+//import java.time.LocalDate;
+//import java.time.LocalDateTime;
+//import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import investigador.Investigador;
+//import investigador.Investigador;
 import observer.Observado;
 import pregunta.Pregunta;
 import protocolo.ConectorPreguntaRespuestas;
 import protocolo.Protocolo;
-import proyecto.Proyecto;
+//import proyecto.Proyecto;
 import respuesta.Respuesta;
 
 public class Encuesta extends Observado {

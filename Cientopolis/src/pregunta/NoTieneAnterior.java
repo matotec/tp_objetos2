@@ -1,6 +1,6 @@
 package pregunta;
 
-import encuesta.Encuesta;
+//import encuesta.Encuesta;
 import protocolo.Protocolo;
 
 public class NoTieneAnterior implements IControlAnterior {

@@ -157,7 +157,7 @@ public class TestRespuesta {
 	public void testNoTieneSiguienteResponder() {
 		//test de "responder" en respuestaA
 		respuestaA.getControlSiguiente().responder(protocoloMockeado);
-		verify(protocoloMockeado, times(1)).setEstado(isA(Finalizado.class));
+		verify(protocoloMockeado, times(1)).finalizar();
 	}
 	
 	@Test

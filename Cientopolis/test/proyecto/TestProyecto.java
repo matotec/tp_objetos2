@@ -13,14 +13,15 @@ import org.mockito.Mockito;
 import encuesta.Encuesta;
 import encuesta.Finalizada;
 import investigador.Investigador;
+import observer.Observado;
+import observer.Observador;
 
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.*;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import pregunta.ReferenciasNotificacion;
 
 public class TestProyecto {
 	private Proyecto unProyecto;
@@ -33,7 +34,6 @@ public class TestProyecto {
 	private ProyectoCompuesto unProyectoCompuesto;
 	private ProyectoCompuesto  otroProyectoCompuesto;
 	private Investigador mockedInvestigador;
-	private ReferenciasNotificacion mockedDireccionDePregunta;
 
 	
 	@BeforeEach 
@@ -69,7 +69,7 @@ public class TestProyecto {
 		
 	}
 	
-	@Test 
+	@Test
 	void testObtenerMaximoCantidadDeRespuestas() {
 		unProyecto.agregarEncuesta(mockedEncuesta);
 		unProyecto.agregarEncuesta(mockedEncuesta2);
@@ -122,15 +122,16 @@ public void testProyectoFinalizado() {
 	this.unProyectoCompuesto.agregarSubProyectos(this.otroProyectoCompuesto);
 	assertTrue(unProyectoCompuesto.estaFinalizado());
 }
-@Test 
- public void testRecibirSubscripcion() {
-	this.unProyecto.agregarEncuesta(mockedEncuesta);
+//@Test 
+// public void testRecibirSubscripcion() {
+//	this.unProyecto.agregarEncuesta(mockedEncuesta);
+//
+//this.unProyecto.recibirSubscripcion(this.mockedInvestigador);
+//verify(mockedEncuesta, times(0)).recibirSubscripcion(mockedDireccionDePregunta);
+//
+//
+//}
 
-this.unProyecto.recibirSubscripcion(this.mockedInvestigador);
-verify(mockedEncuesta, times(0)).recibirSubscripcion(mockedDireccionDePregunta);
-
-
-}
 @Test
 public void testGetNombre() {
 	String unNombre="Soy un nombre";
@@ -172,4 +173,152 @@ public void testFechaDeEncuestas() {
 	
 	assertThat(unProyecto.fechaDeEncuestas(),is(fechaDeEncuestas));
 }
-}  
+
+@Test
+public void testSuscribirInvestigadorProyectoSimple() {
+	
+	Proyecto spyUnProyecto = spy(unProyecto);
+	
+	spyUnProyecto.agregarEncuesta(mockedEncuesta);
+	
+	spyUnProyecto.suscribir(mockedInvestigador);
+	
+	verify(mockedEncuesta, times(1)).agregar(mockedInvestigador);
+	verify(mockedEncuesta2, times(0)).agregar(mockedInvestigador);
+	
+	spyUnProyecto.agregarEncuesta(mockedEncuesta2);
+	
+	spyUnProyecto.suscribir(mockedInvestigador);
+	
+	verify(mockedEncuesta, times(2)).agregar(mockedInvestigador);
+	verify(mockedEncuesta2, times(1)).agregar(mockedInvestigador);
+	
+	Investigador mockedInvestigador2 = mock(Investigador.class);
+	
+	spyUnProyecto.suscribir(mockedInvestigador2);
+	
+	verify(mockedEncuesta, times(2)).agregar(mockedInvestigador);
+	verify(mockedEncuesta2, times(1)).agregar(mockedInvestigador);
+	
+	verify(mockedEncuesta, times(1)).agregar(mockedInvestigador2);
+	verify(mockedEncuesta2, times(1)).agregar(mockedInvestigador2);
+	
+}
+
+@Test
+public void testSuscribirInvestigadorProyectoCompuesto() {
+	
+	Proyecto spyUnProyecto = spy(unProyecto);
+	spyUnProyecto.agregarEncuesta(mockedEncuesta);
+	
+	ProyectoCompuesto spyUnProyectoCompuesto = spy(unProyectoCompuesto);
+	spyUnProyectoCompuesto.agregarSubProyectos(unProyecto);
+	spyUnProyectoCompuesto.agregarEncuesta(mockedEncuesta2);
+	
+	spyUnProyectoCompuesto.suscribir(mockedInvestigador);
+	
+	verify(mockedEncuesta, times(1)).agregar(mockedInvestigador);
+	verify(mockedEncuesta2, times(1)).agregar(mockedInvestigador);
+	verify(mockedEncuesta3, times(0)).agregar(mockedInvestigador);
+	
+	spyUnProyectoCompuesto.agregarEncuesta(mockedEncuesta3);
+	
+	spyUnProyectoCompuesto.suscribir(mockedInvestigador);
+	
+	verify(mockedEncuesta, times(2)).agregar(mockedInvestigador);
+	verify(mockedEncuesta2, times(2)).agregar(mockedInvestigador);
+	verify(mockedEncuesta3, times(1)).agregar(mockedInvestigador);
+	
+	Investigador mockedInvestigador2 = mock(Investigador.class);
+	
+	spyUnProyectoCompuesto.suscribir(mockedInvestigador2);
+	
+	verify(mockedEncuesta, times(2)).agregar(mockedInvestigador);
+	verify(mockedEncuesta2, times(2)).agregar(mockedInvestigador);
+	verify(mockedEncuesta3, times(1)).agregar(mockedInvestigador);
+	
+	verify(mockedEncuesta, times(1)).agregar(mockedInvestigador2);
+	verify(mockedEncuesta2, times(1)).agregar(mockedInvestigador2);
+	verify(mockedEncuesta3, times(1)).agregar(mockedInvestigador2);
+	
+}
+
+
+}
+
+//package proyecto;
+//
+//
+//import static org.junit.Assert.assertFalse;
+//import static org.junit.Assert.assertTrue;
+//
+//import static org.hamcrest.CoreMatchers.*;
+//import static org.junit.Assert.*;
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
+//
+//import encuesta.Encuesta;
+//
+//import static org.mockito.Mockito.*;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//
+//public class TestProyecto {
+//	private Proyecto unProyecto;
+//	private Encuesta mockedEncuesta;
+//	private Encuesta mockedEncuesta2;
+//	private Encuesta mockedEncuesta3;
+//	private List<Encuesta> listaDeEncuestas;
+//	@BeforeEach 
+//	 public void setUp() {
+//		unProyecto= new Proyecto("Soy una descripcon","Soy un proposito","proyectoUno");
+//		mockedEncuesta=mock(Encuesta.class);
+//		mockedEncuesta2=mock(Encuesta.class);
+//		mockedEncuesta3=mock(Encuesta.class);
+//		listaDeEncuestas=new ArrayList<>();
+//	
+//	} 
+//	@Test
+//	void alCrearSeElProyectoPoseeUnaDescripcionYUnProposito() {
+//		assertFalse(unProyecto.getDescripcion().isEmpty());
+//		assertFalse(unProyecto.getProposito().isEmpty());
+//		assertTrue(unProyecto.obtenerEncuestas().isEmpty());
+//		
+//	}
+//	@Test
+//	public void agregarEncuestaAlProyecto() {
+//		unProyecto.agregarEncuesta(mockedEncuesta);
+//		assertFalse(unProyecto.obtenerEncuestas().isEmpty());
+//		assertTrue(unProyecto.obtenerEncuestas().contains(mockedEncuesta));
+//		
+//		
+//	}
+//	
+//	@Test
+//	void testObtenerMaximoCantidadDeRespuestas() {
+//		unProyecto.agregarEncuesta(mockedEncuesta);
+//		unProyecto.agregarEncuesta(mockedEncuesta2);
+//		when(mockedEncuesta.cantidadDeRespuestas()).thenReturn(2);
+//		when(mockedEncuesta2.cantidadDeRespuestas()).thenReturn(1);
+//		assertTrue(unProyecto.obtenerMaximoCantDeRespuestas()==2);
+//	}
+//	
+//	@Test 
+//	void testObtenerEncuestasConMaximoCantidadDeRespuestas() {
+//		unProyecto.agregarEncuesta(mockedEncuesta);
+//		unProyecto.agregarEncuesta(mockedEncuesta2);
+//		unProyecto.agregarEncuesta(mockedEncuesta3);
+//		listaDeEncuestas.add(mockedEncuesta);
+//		when(mockedEncuesta.cantidadDeRespuestas()).thenReturn(2);
+//		when(mockedEncuesta2.cantidadDeRespuestas()).thenReturn(1);
+//		when(mockedEncuesta3.cantidadDeRespuestas()).thenReturn(1);
+//		assertTrue(unProyecto.obtenerMaximoCantDeRespuestas()==2);
+//		assertThat(unProyecto.obtenerEncuestasFinalizadasConMayorCantidadDeRespuestas(),is(listaDeEncuestas));
+//	} 
+//	
+//} 
+//	
+//
+//

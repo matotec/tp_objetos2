@@ -1,6 +1,6 @@
 package pregunta;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 import respuesta.Respuesta;

@@ -5,14 +5,14 @@ import java.util.List;
 import encuesta.Encuesta;
 import observer.Observado;
 import observer.Observador;
-import pregunta.Pregunta;
+//import pregunta.Pregunta;
 import proyecto.Proyecto;
 import respuesta.Respuesta;
 
 public class Investigador implements Observador{
  
 private String nombre;
-private List<Encuesta> encuestasMayor = new ArrayList<Encuesta>();
+//private List<Encuesta> encuestasMayor = new ArrayList<Encuesta>();
 private List<Proyecto> listaDeProyectos;
 
 	public Investigador(String unNombre) {

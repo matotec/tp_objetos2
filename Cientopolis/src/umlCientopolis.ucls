@@ -443,168 +443,168 @@
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="72">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="73" name="encuestasMayor">        
-        <position height="18" width="89" x="926" y="2361"/>      
+  <realization id="72">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="73">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="74" name="referencias"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="77" name="encuesta">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="74" minimum="0" maximum="2147483647">        
+      <multiplicity id="78" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="75">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="28"/>  
-  </realization>  
-  <association id="76">    
-    <end type="SOURCE" refId="33" navigable="false">      
-      <attribute id="77" name="referencias"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="31" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="79">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="80" name="encuesta">        
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="80" name="anterior">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="81" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="82">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="83" name="anterior">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="84" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="85">    
+  <association id="82">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="86" name="encuestasOrdenadas">        
+      <attribute id="83" name="encuestasOrdenadas">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="87" minimum="0" maximum="2147483647">        
+      <multiplicity id="84" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="88">    
+  <realization id="85">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="32"/>  
   </realization>  
-  <realization id="89">    
+  <realization id="86">    
     <end type="SOURCE" refId="30"/>    
     <end type="TARGET" refId="28"/>  
   </realization>  
-  <association id="90">    
+  <association id="87">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="91" name="protocolosCreados">        
+      <attribute id="88" name="protocolosCreados">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="92" minimum="0" maximum="2147483647">        
+      <multiplicity id="89" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="93">    
+  <generalization id="90">    
     <end type="SOURCE" refId="26"/>    
     <end type="TARGET" refId="25"/>  
   </generalization>  
-  <realization id="94">    
+  <realization id="91">    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <generalization id="95">    
+  <generalization id="92">    
     <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="14"/>  
   </generalization>  
-  <association id="96">    
+  <association id="93">    
     <end type="SOURCE" refId="31" navigable="false">      
-      <attribute id="97" name="respuestas"/>      
-      <multiplicity id="98" minimum="0" maximum="2147483647"/>    
+      <attribute id="94" name="respuestas"/>      
+      <multiplicity id="95" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="29" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="99">    
+  <realization id="96">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="10"/>  
   </realization>  
-  <realization id="100">    
+  <realization id="97">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="10"/>  
   </realization>  
-  <association id="101">    
+  <association id="98">    
     <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="102" name="siguiente">        
+      <attribute id="99" name="siguiente">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="103" minimum="0" maximum="1">        
+      <multiplicity id="100" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="104">    
+  <generalization id="101">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="25"/>  
   </generalization>  
-  <association id="105">    
+  <association id="102">    
     <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="106" name="subsProyectos">        
+      <attribute id="103" name="subsProyectos">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="107" minimum="0" maximum="2147483647">        
+      <multiplicity id="104" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="108">    
+  <association id="105">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="109" name="investigadores">        
+      <attribute id="106" name="investigadores">        
         <position height="0" width="0" x="193" y="-367"/>      
       </attribute>      
-      <multiplicity id="110" minimum="0" maximum="2147483647">        
+      <multiplicity id="107" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="193" y="-367"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="111">    
+  <realization id="108">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <realization id="112">    
+  <realization id="109">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="23"/>  
   </realization>  
-  <association id="113">    
+  <association id="110">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="114" name="preguntaInicial">        
+      <attribute id="111" name="preguntaInicial">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="115" minimum="0" maximum="1">        
+      <multiplicity id="112" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="114" name="preguntasRespondidas">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="115" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
@@ -612,59 +612,47 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="116">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="117" name="preguntasRespondidas">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="118" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="117" name="pregunta"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="119">    
-    <end type="SOURCE" refId="31" navigable="false">      
-      <attribute id="120" name="pregunta"/>      
-      <multiplicity id="121" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="122">    
     <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="123" name="preguntasRespondidasYRespuestas">        
+      <attribute id="120" name="preguntasRespondidasYRespuestas">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="124" minimum="0" maximum="1">        
+      <multiplicity id="121" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="125">    
+  <generalization id="122">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="6"/>  
   </generalization>  
-  <association id="126">    
+  <association id="123">    
     <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="127" name="preguntaActual">        
+      <attribute id="124" name="preguntaActual">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="128" minimum="0" maximum="1">        
+      <multiplicity id="125" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="129">    
+  <association id="126">    
     <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="130" name="opciones">        
+      <attribute id="127" name="opciones">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="131" minimum="0" maximum="2147483647">        
+      <multiplicity id="128" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
